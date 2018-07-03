@@ -45,9 +45,7 @@ setlocale(LC_ALL, 'de_CH.UTF-8');
 function wpseed_load_fonts() {
   // define fonts
   $font_names = [
-    'ubuntu-v11-latin-regular',
-    'ubuntu-v11-latin-500',
-    'ubuntu-v11-latin-700'
+    'cour'
   ];
   // define font-formats for all fonts
   $font_formats = [

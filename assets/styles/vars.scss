@@ -32,6 +32,8 @@ $color__dark:                 #333333;
 $color__bright:               #f7f7f2;
 $color__grey:                 #b5b5b1;
 $color__green:                #97c475;
+$default__color__link:         pink;
+
 
 
 
@@ -42,7 +44,7 @@ $color__green:                #97c475;
 
 /* HTML
 /––––––––––––––––––––––––*/
-$html__fontname:              'Ubuntu', sans-serif; // Normal 400, Medium 500, Bold 700
+$html__fontname:              'courier_newregular', serif; // Normal 400, Medium 500, Bold 700
 $html__bgcolor:                $color__bright;
 $html__textcolor:              $color__dark;
 

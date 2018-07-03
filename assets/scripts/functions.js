@@ -8,16 +8,18 @@
  *
  */
 
+ // var THREE = require('three')
+ // var OrbitControls = require('three-orbit-controls')(THREE)
 
 /*==================================================================================
   Functions
 ==================================================================================*/
 
-
 /* Hamburger switch
 /––––––––––––––––––––––––*/
 $(function(){
   $(document).on('click', '#hamburger', function (event) {
+    alert('new');
     // show overlay
     $('#nav_main').toggleClass('hiddenmobile');
     // switch icon
@@ -33,7 +35,12 @@ $(function(){
 // http://mynameismatthieu.com/WOW/
 $(function(){
   new WOW().init();
-});
+
+  
+
+window.addEventListener('resize', onWindowResize, false);
+
+}); //close jqeuery loaded
 
 
 /* Smooth Anchor Scrolling

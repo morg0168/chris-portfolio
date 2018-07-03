@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "wpseed.vm";
+var browsersync_proxy = "http://localhost/chris-portfolio";
 
 // default asset paths
 var assets = {
@@ -42,6 +42,7 @@ var vendors = require('./gulp-vendors.json');
 /===================================================== */
 // general
 var gulp = require('gulp');
+// var webpack = require('webpack-stream');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var order = require("gulp-order");
@@ -83,7 +84,9 @@ gulp.task('clean:fonts', function() { return del(['dist/fonts'])});
 // initialize Browser Sync
 gulp.task('browsersync', function() {
   browserSync.init({
-    proxy: browsersync_proxy,
+   proxy: browsersync_proxy,
+    // server: "localhost",
+    // port: 8888,
     notify: false,
     open: false,
     snippetOptions: {
@@ -134,6 +137,7 @@ gulp.task('cachebust', ['clean:cachebust', 'css'], function() {
 // note:    modernizr.js is concatinated first in .pipe(order)
 gulp.task('javascript', ['clean:javascript'], function() {
   return gulp.src(assets['javascript'].concat(vendors['javascript']))
+    // .pipe(webpack())
     .pipe(order([
       'assets/scripts/modernizr.js',
       'assets/scripts/*.js'

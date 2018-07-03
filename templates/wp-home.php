@@ -13,7 +13,8 @@
 
 <!-- content » blog home -->
 
-  <div class="content blog">
+  <div class="content home">
+    <div id="container"></div>
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
       <article>
