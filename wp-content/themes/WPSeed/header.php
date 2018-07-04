@@ -19,8 +19,8 @@
     <? wp_head(); ?>
   </head>
 
-  <body>
-      <div class="top">
+  <body class="<?php if (is_page_template('default')) { echo post_template; }?>">
+      <!-- <div class="top">
         <a href="<?= get_bloginfo('url'); ?>">
           <div class="logo"></div>
         </a>
@@ -41,4 +41,4 @@
           ?>
         </nav>
 
-      </div>
+      </div> -->

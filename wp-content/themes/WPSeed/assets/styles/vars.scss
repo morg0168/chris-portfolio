@@ -32,6 +32,8 @@ $color__dark:                 #333333;
 $color__bright:               #f7f7f2;
 $color__grey:                 #b5b5b1;
 $color__green:                #97c475;
+$color__black:                #000000;
+$color__white:                #ffffff;
 $default__color__link:         pink;
 
 
@@ -44,7 +46,7 @@ $default__color__link:         pink;
 
 /* HTML
 /––––––––––––––––––––––––*/
-$html__fontname:              'Ubuntu', sans-serif; // Normal 400, Medium 500, Bold 700
+$html__fontname:              'courier_newregular', serif; // Normal 400, Medium 500, Bold 700
 $html__bgcolor:                $color__bright;
 $html__textcolor:              $color__dark;
 
@@ -84,3 +86,80 @@ $transition_slow:            .7s;
 
 $shadow:                      0 2px 5px 0 rgba(0, 0, 0, 0.16),    0 2px 10px 0 rgba(0, 0, 0, .12);
 $shadow__soft:                0 1px 2px 0 rgba(0, 0, 0, 0.08),    0 1px 5px 0 rgba(0, 0, 0, 0.06);
+
+
+/*==================================================================================
+  1.0 RESPONSIVE MIXINS
+==================================================================================*/
+// contains styles & mixins for responsive/fluid usage
+
+
+/* BY BREAKPOINTS
+/––––––––––––––––––––––––*/
+// breakpoint-width defined in vars.scss
+@mixin desktop {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: #{$breakpoint - 1px}) {
+    @content;
+  }
+}
+
+
+/* BY PIXELS
+/––––––––––––––––––––––––*/
+// usage example:  { ... }
+@mixin vpw_min($min) {
+    @media (min-width: #{$min}) { @content; }
+}
+@mixin vpw_max($max) {
+    @media (max-width: #{$max}) { @content; }
+}
+@mixin vpw($min: 0px, $max: 0px) {
+    @media (min-width: #{$min}) and (max-width: #{$max}) { @content; }
+}
+
+
+/* BY ASPECT RATIO
+/––––––––––––––––––––––––*/
+// usage example: asr_min(16,9) { ... }
+@mixin asr_min($width: 16, $height: 9) {
+    @media (min-aspect-ratio:  #{$width} / #{$height}) { @content; }
+}
+@mixin asr_max($width: 16, $height: 9) {
+    @media (max-aspect-ratio:  #{$width} / #{$height}) { @content; }
+}
+
+
+/* BY CLASS
+/––––––––––––––––––––––––*/
+.mobile {
+  @include desktop {
+    display: none;
+  }
+}
+.desktop {
+  @include mobile {
+    display: none;
+  }
+}
+
+
+
+/*==================================================================================
+  2.0 GENERAL SASS-FUNCTIONS
+==================================================================================*/
+
+
+/* STRIP UNIT
+/––––––––––––––––––––––––*/
+// removes a unit from a variable
+@function stripunit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}

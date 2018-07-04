@@ -13,8 +13,6 @@
 
 
 @import 'vars';
-@import 'essentials';
-
 
 
 /*==================================================================================
@@ -61,6 +59,9 @@ body  {
   font-size: $body__fontsize; // actual font size
   font-weight: $body__fontweight;
   line-height: $body__lineheight;
+  &.post_template {
+    background: $color__black;
+  }
 }
 
 a {

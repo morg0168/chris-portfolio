@@ -45,9 +45,7 @@ setlocale(LC_ALL, 'de_CH.UTF-8');
 function wpseed_load_fonts() {
   // define fonts
   $font_names = [
-    'ubuntu-v11-latin-regular',
-    'ubuntu-v11-latin-500',
-    'ubuntu-v11-latin-700'
+    'cour'
   ];
   // define font-formats for all fonts
   $font_formats = [
@@ -133,6 +131,8 @@ function wpseed_enqueue_scripts_and_styles() {
   // scripts
   wp_register_script('wpseed/scripts', get_template_directory_uri() . '/dist/script.min.js', false, array( 'jquery' ), true);
   wp_enqueue_script('wpseed/scripts');
+  // flexboxgrid
+//  wp_enqueue_style('wpseed/styles', get_template_directory_uri() . wpseed_get_cachebusted_css(), false, null);
   // styles
   wp_enqueue_style('wpseed/styles', get_template_directory_uri() . wpseed_get_cachebusted_css(), false, null);
 }

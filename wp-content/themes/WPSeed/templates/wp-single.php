@@ -10,20 +10,36 @@
 
 <? get_header(); ?>
 
+<div class="top">
+  <a href="<?= get_bloginfo('url'); ?>">
+    <div class="logo"></div>
+  </a>
+  <button class="hamburger--squeeze" id="hamburger" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+</div>
+
 <!-- content » single post -->
 
-  <div class="content post">
+  <div class="content post row">
+
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
-      <article>
-        <h2><? the_title(); ?></h2>
-        <div class="postinfo"><?= get_the_date_german(); ?></div>
-        <? if (has_post_thumbnail()) : ?>
-        <div class="thumbnail" style="background-image: url(<? the_post_thumbnail_url() ?>)"></div>
-        <? endif ?>
-        <? the_content(); ?>
-      </article>
+
+      <div class="col-xs-12 col-sm-6">
+        <article>
+          <? the_content(); ?>
+        </article>
+      </div>
+        <div class="col-xs-12 col-sm-6">
+          <? $postID = $post->ID;
+            echo get_post_meta($postID,'description', true); ?>
+        </div>
     <? endwhile; endif; ?>
+  </div>
 
   </div>
 

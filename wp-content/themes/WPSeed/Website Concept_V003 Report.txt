@@ -1,0 +1,130 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: Website Concept_V003.ai
+Color Mode: RGB color
+Color Profile: sRGB IEC61966-2.1
+Ruler Units: pixels
+Artboard Dimensions: 430.875 px x 766 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Adobe Caslon Pro (OTF)
+Courier New (OTF)
+Courier New Bold (OTF)
+MonospaceTypewriter (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+C:\Users\User\Desktop\Cursor.png
+Type: Transparent Grayscale
+Bits per Pixel: 16
+Channels: 2
+Size: 450K, 480 by 480 pixels
+Dimensions: 24 by 24 points 
+Resolution: 1440 by 1440 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\20110010.JPG
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 18540K, 3090 by 2048 pixels
+Dimensions: 554 by 367.182 points 
+Resolution: 401.588 by 401.588 pixels per inch
+
+
+C:\Users\User\Desktop\30120580_1533263360136031_1844478892_n.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1409K, 960 by 501 pixels
+Dimensions: 654 by 368 points 
+Resolution: 105.688 by 98.022 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 654.222 by 368 points 
+Resolution: 211.304 by 211.304 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 428 by 240.75 points 
+Resolution: 322.991 by 322.991 pixels per inch
+
+
+C:\Users\User\Documents\maya\projects\SONIC_RECLUSE-TWOSR2\images\Asteroid Field_far.0107.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 1366 by 768.375 points 
+Resolution: 101.201 by 101.201 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 654.222 by 368 points 
+Resolution: 211.304 by 211.304 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 654.222 by 368 points 
+Resolution: 211.304 by 211.304 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 654.222 by 368 points 
+Resolution: 211.304 by 211.304 pixels per inch
+
+
+G:\SCHOOL\FILM_B-SYMBIOSIS\Image3.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 8100K, 1920 by 1080 pixels
+Dimensions: 654.222 by 368 points 
+Resolution: 211.304 by 211.304 pixels per inch
