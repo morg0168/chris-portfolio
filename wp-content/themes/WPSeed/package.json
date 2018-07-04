@@ -5,8 +5,10 @@
   "author": "flurinduerst",
   "dependencies": {
     "animate.css": "^3.5.2",
+    "gulp-jshint": "^2.1.0",
     "hamburgers": "^0.9.3",
     "normalize.css": "^7.0.0",
+    "slick-carousel": "^1.8.1",
     "three": "^0.93.0",
     "three-orbit-controls": "^82.1.0",
     "wowjs": "^1.1.3"
@@ -26,6 +28,7 @@
     "gulp-rev": "^8.1.1",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.5"
   }
 }

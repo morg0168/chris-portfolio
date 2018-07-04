@@ -1,9 +1,8 @@
 {
   "javascript": [
     "assets/scripts/modernizr.js",
-    "node_modules/wowjs/dist/wow.min.js",
-    "node_modules/three/build/three.js",
-    "node_modules/three-orbit-controls/index.js"
+      "assets/scripts/slick.js",
+    "node_modules/wowjs/dist/wow.min.js"
   ],
   "css": [
     "node_modules/hamburgers/dist/hamburgers.min.css",

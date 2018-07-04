@@ -28,6 +28,9 @@
 
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
+    <div class="post-carousel"></div>
+    <div class="col-xs-12 col-sm-12"> <? $postID = $post->ID;
+        echo get_post_meta($postID,'video', true); ?></div>
 
       <div class="col-xs-12 col-sm-6">
         <article>
@@ -35,12 +38,12 @@
         </article>
       </div>
         <div class="col-xs-12 col-sm-6">
-          <? $postID = $post->ID;
-            echo get_post_meta($postID,'description', true); ?>
+          <? echo get_post_meta($postID,'description', true); ?>
         </div>
     <? endwhile; endif; ?>
   </div>
 
   </div>
 
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <? get_footer(); ?>

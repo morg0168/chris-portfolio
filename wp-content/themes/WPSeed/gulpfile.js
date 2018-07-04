@@ -64,6 +64,7 @@ var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 // delete
 var del = require('del');
+var jshint = require('gulp-jshint');
 
 
 /* TASKS
@@ -142,6 +143,8 @@ gulp.task('javascript', ['clean:javascript'], function() {
       'assets/scripts/modernizr.js',
       'assets/scripts/*.js'
     ], { base: './' }))
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('script.min.js'))
     .pipe(uglify())

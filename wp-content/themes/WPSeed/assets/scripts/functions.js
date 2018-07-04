@@ -7,10 +7,6 @@
  * was main.js until 3.4.1
  *
  */
-
- // var THREE = require('three')
- // var OrbitControls = require('three-orbit-controls')(THREE)
-
 /*==================================================================================
   Functions
 ==================================================================================*/
@@ -29,6 +25,15 @@ $(function(){
   });
 });
 
+/* Post Carousel  */
+$(function() {
+   $('.post-carousel').slick({
+     slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+   });
+});
 
 /* WOW
 /––––––––––––––––––––––––*/
@@ -36,7 +41,6 @@ $(function(){
 $(function(){
   new WOW().init();
 
-  
 
 window.addEventListener('resize', onWindowResize, false);
 
