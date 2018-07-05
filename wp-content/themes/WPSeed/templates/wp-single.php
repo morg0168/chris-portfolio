@@ -24,20 +24,45 @@
 
 <!-- content » single post -->
 
-  <div class="content post row">
-
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
-    <div class="post-carousel"></div>
-    <div class="col-xs-12 col-sm-12"> <? $postID = $post->ID;
-        echo get_post_meta($postID,'video', true); ?></div>
+    <div class="slider-contain">
+      <div class="slider slider-nav">
+        <div class="slide video-slide">
+          <video id="vid" video autobuffer controls>
+            <source src="<? $postID = $post->ID;
+              echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
+          </video>
+          </div>
+          <? $pMeta = get_post_meta($postID,'photo1', true);
+            if (!empty($pMeta))  { ?>
+              <div class="slide">
+                <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+              </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo2', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo1', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+      </div>
+    </div>
 
-      <div class="col-xs-12 col-sm-6">
+
+  <div class="content post row">
+      <div class="col-xs-12 col-sm-6 no-padding">
         <article>
           <? the_content(); ?>
         </article>
       </div>
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-6 no-padding">
           <? echo get_post_meta($postID,'description', true); ?>
         </div>
     <? endwhile; endif; ?>

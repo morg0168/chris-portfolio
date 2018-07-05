@@ -73,6 +73,9 @@ a {
   }
 }
 
+.no-padding {
+  padding:0!important;
+}
 
 
 /*==================================================================================
@@ -89,4 +92,66 @@ a {
   display:block;
   height: 4rem; // = height of .top
   margin-top: -4rem;  // = height of .top
+}
+
+.slider {
+  margin: 4vw 0;
+}
+
+.slider-contain {
+  width: 100vw;
+  position: relative;
+  left: 0;
+}
+
+.slick-track {
+  overflow:hidden;
+  max-height: 19vw;
+  //transform:none!important;
+}
+
+.slick-list{
+  background: red;
+  padding-left: 50px;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.slick-slide{
+  min-width:calc(46vw - 4px);
+  &.slick-current {
+  }
+  .slide {
+    width:100%;
+    display:block;
+    min-height:19vw;
+    width:100%;
+    &.video-slide {
+      width: 100%;
+      height:100%;
+      overflow:hidden;
+      background: transparent;
+      position:relative;
+      max-height:19vw;
+      #vid{
+      //  position: absolute;
+        top: 50%;
+        left: 50%;
+        // -webkit-transform: translateX(-50%) translateY(-50%);
+        // transform: translateX(-50%) translateY(-50%);
+        // min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        //max-width:100%;
+        overflow: hidden;
+        max-width: calc(46vw - 4px);
+      }
+    }
+    .slide-inner {
+      background-size: cover;
+  min-height: 19vw;
+    }
+  }
 }

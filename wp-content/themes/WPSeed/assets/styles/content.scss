@@ -29,8 +29,8 @@
 
 .content {
   position: relative;
-  width: 90vw;
-  padding-top: 2rem;
+  width: 100vw;
+  padding: 0 50px 50px 50px;
   @include mobile {
     width: 100%;
     padding: 1rem;
@@ -70,14 +70,14 @@
   align-items: center;
   width: 100vw;
   // height: 4rem;
-  padding: 0 5vw;
+  padding: 0 25px;
   background-color: $color__black;
   box-shadow: $shadow;
   @include mobile {
     padding: 0 1rem;
   }
   .logo {
-    min-width: 150px;
+    min-width: 130px;
     height: 5rem;
     margin-right: 2rem;
     background-image: url('images/logo.png');

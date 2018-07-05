@@ -13,8 +13,8 @@
 
 /* Hamburger switch
 /––––––––––––––––––––––––*/
-$(function(){
-  $(document).on('click', '#hamburger', function (event) {
+$(function() {
+  $(document).on('click', '#hamburger', function(event) {
     alert('new');
     // show overlay
     $('#nav_main').toggleClass('hiddenmobile');
@@ -23,28 +23,63 @@ $(function(){
     // prevent content scrolling
     $('html').toggleClass('noscroll');
   });
+  initSlick();
 });
 
-/* Post Carousel  */
-$(function() {
-   $('.post-carousel').slick({
-     slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-   });
-});
+// /* Post Carousel  */
+// $(function() {
+var $slider = $('.slider-nav');
+
+function initSlick() {
+  $slider.slick({
+    slidesToShow: 2,
+    // slidesToScroll: 1,
+    //centerMode: true,
+    swipeToSlide: true,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true,
+    infinite: false,
+    initialSlide: 0,
+    variableWidth: true
+  });
+  $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    if (nextSlide == 0) {
+      console.log(slick);
+      console.log(currentSlide);
+      console.log(nextSlide);
+
+      //$('*[data-slick-index="1"]').addClass('hidden');
+      //  $slider.slick('slickPrev');
+      //$('.slick-track').css({'transform': 'translate3d(0px, 0px, 0px)'});
+      //transform: translate3d(0px, 0px, 0px)
+
+    }
+  });
+
+}
+
+// });
 
 /* WOW
 /––––––––––––––––––––––––*/
 // http://mynameismatthieu.com/WOW/
-$(function(){
+$(function() {
   new WOW().init();
 
 
-window.addEventListener('resize', onWindowResize, false);
-
 }); //close jqeuery loaded
+window.addEventListener('resize', onWindowResize, false);
+window.addEventListener('load', onWindowResize, false);
+
+function onWindowResize() {
+  //alert('resive');
+  if ($(window).width() < 767) {
+    $('.slider-nav').slick('destroy');
+  } else {
+    //  initSlick();
+  }
+}
 
 
 /* Smooth Anchor Scrolling
@@ -77,7 +112,7 @@ $('a[href*="#"]')
           if ($target.is(":focus")) { // Checking if the target was focused
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
             $target.focus(); // Set focus again
           };
         });
