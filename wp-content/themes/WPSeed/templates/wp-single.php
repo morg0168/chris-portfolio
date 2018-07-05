@@ -64,6 +64,8 @@
       </div>
         <div class="col-xs-12 col-sm-6 no-padding">
           <? echo get_post_meta($postID,'description', true); ?>
+          <br/>
+          <div class="next-page"><div class="arrow"></div></div>
         </div>
     <? endwhile; endif; ?>
   </div>
