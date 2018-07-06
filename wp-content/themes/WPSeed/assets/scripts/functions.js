@@ -39,7 +39,7 @@ function initSlick() {
     slidesToShow: 2,
     swipeToSlide: true,
     dots: false,
-    arrows: false,
+    arrows: true,
     focusOnSelect: true,
     infinite: false,
     initialSlide: 0,
