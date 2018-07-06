@@ -22,7 +22,7 @@
           $arg = array(
           'numberposts' => 8,
           'offset' => 0,
-          'category_name' => "Film",
+          'category_name' => "Projects",
           'orderby' => 'post_date',
           'order' => 'ASC',
           'post_type' => 'post',
@@ -31,10 +31,9 @@
       );
 
       $events = new WP_Query( $arg ); ?>
-
+        <p class="category-title">Projects</p>
         <? if ($events->have_posts() ) : while ($events->have_posts()) : $events->the_post(); ?>
           <article>
-            <p class="category-title">Projects</p>
             <p><a href="<?php echo get_post_permalink(); ?>"><? the_title(); ?></a></p>
           </article>
         <? endwhile; endif; wp_reset_query();?>

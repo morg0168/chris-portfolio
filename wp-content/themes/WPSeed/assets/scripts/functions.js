@@ -27,14 +27,16 @@ $(function() {
 });
 
 // /* Post Carousel  */
-// $(function() {
 var $slider = $('.slider-nav');
+
+var getRandomInt = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 
 function initSlick() {
   $slider.slick({
     slidesToShow: 2,
-    // slidesToScroll: 1,
-    //centerMode: true,
     swipeToSlide: true,
     dots: false,
     arrows: false,
@@ -43,24 +45,45 @@ function initSlick() {
     initialSlide: 0,
     variableWidth: true
   });
-  $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-    if (nextSlide == 0) {
-      console.log(slick);
-      console.log(currentSlide);
-      console.log(nextSlide);
+  var varWidthSlides = $('.varWidth').closest('.slick-slide');
+  var counter = 0;
+  var total = varWidthSlides.length;
+  var videoWidth = $('.video-slide').width(); //666
+  var totalWidth = $('.slick-list').width(); //1060
+  var frontPageSpace = totalWidth - videoWidth;
+  var fixedSize = frontPageSpace + 50;
 
-      //$('*[data-slick-index="1"]').addClass('hidden');
-      //  $slider.slick('slickPrev');
-      //$('.slick-track').css({'transform': 'translate3d(0px, 0px, 0px)'});
-      //transform: translate3d(0px, 0px, 0px)
+  var fixeddiv = $('.fixed-width').closest('.slick-slide');
+  $.each(fixeddiv, function() {
+    console.log(fixedSize);
+    var newVal = fixedSize / document.documentElement.clientWidth * 100;
+    fixeddiv.css({
+      "min-width": newVal + "vw",
+    });
+  });
 
+  var leftOver = (totalWidth - 2) / 2;
+
+  $.each(varWidthSlides, function() {
+    counter++;
+    var currentTotal = total - 1;
+    var newVal = leftOver / document.documentElement.clientWidth * 100;
+    if (counter == total) {
+      varWidthSlides.css({
+        "min-width": newVal + "vw",
+      });
+    } else if (counter == currentTotal) {
+      varWidthSlides.css({
+        "min-width": newVal + "vw",
+      });
+    } else {
+      varWidthSlides.css({
+        "min-width": 50
+      });
     }
   });
 
 }
-
-// });
-
 /* WOW
 /––––––––––––––––––––––––*/
 // http://mynameismatthieu.com/WOW/
