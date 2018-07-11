@@ -218,14 +218,22 @@ a {
 }
 
 #video-controls {
-  z-index:9999;
-  position:absolute;
-  bottom:0;
-  #play-pause {
+  z-index: 999;
+  position: absolute;
+      bottom: 0;
+      width: calc(100% - 4vw);
+      left: 0;
+      right: 0;
+      margin: 1vw 2vw;
+      color:white;
+  #play-pause, #full-screen {
     color:white;
-    font-size:2rem;
     &:hover {
       cursor:pointer;
     }
+  }
+  #full-screen {
+    position:absolute;
+    top:-29vw;
   }
 }

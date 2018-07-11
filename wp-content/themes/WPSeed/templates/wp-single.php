@@ -34,12 +34,12 @@
               <source src="<? $postID = $post->ID;
                 echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
             </video>
-            <div id="video-controls">
+            <div id="video-controls" class="row between-xs">
               <button type="button" id="play-pause"><i class="fa fa-2x fa-play"></i></button>
               <input type="range" id="seek-bar" value="0">
-              <button type="button" id="mute">Mute</button>
               <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-              <button type="button" id="full-screen">Full-Screen</button>
+              <button type="button" id="full-screen">FULL</button>
+              <span id="time-stamp">0:00</span>
             </div>
           </div>
           </div>

@@ -40,6 +40,7 @@ function initSlick() {
     slidesToShow: 2,
     swipeToSlide: true,
     dots: false,
+    draggable: true,
     arrows: true,
      lazyLoad: 'ondemand',
     focusOnSelect: true,
