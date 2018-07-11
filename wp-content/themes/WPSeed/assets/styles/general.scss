@@ -11,10 +11,7 @@
  *
  */
 
-
 @import 'vars';
-
-
 /*==================================================================================
   GENERAL
 ==================================================================================*/
@@ -156,15 +153,18 @@ a {
     }
     .slide-inner {
       background-size: cover;
-      min-height: 34vw;
+      min-height: 35vw;
     }
   }
 
+  .slider {
+      display: none;
+  }
 
-.slider {     opacity:0;
-    transition:opacity 2s ease-out; }
-.slider.slick-initialized {     opacity:1;
-    transition:opacity 2s ease-out; }
+// .slider {     visibility:hidden;
+//     transition:opacity 2s ease-out; }
+// .slider.slick-initialized {     visibility:visible;
+//     transition:opacity 2s ease-out; }
 
 .next-page {
   position: relative;
@@ -215,4 +215,17 @@ a {
     border: none;
     outline: 0;
     z-index: 9999999;
+}
+
+#video-controls {
+  z-index:9999;
+  position:absolute;
+  bottom:0;
+  #play-pause {
+    color:white;
+    font-size:2rem;
+    &:hover {
+      cursor:pointer;
+    }
+  }
 }

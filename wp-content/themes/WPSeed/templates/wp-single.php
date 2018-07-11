@@ -29,21 +29,23 @@
     <div class="slider-contain">
       <div class="slider slider-nav">
         <div class="slide video-slide">
-          <video id="vid" video autobuffer poster="<? $postID = $post->ID;  echo get_post_meta($postID,'cover', true); ?>" >
-            <source src="<? $postID = $post->ID;
-              echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
-          </video>
-          <div id="video-controls">
-            <button type="button" id="play-pause">Play</button>
-            <input type="range" id="seek-bar" value="0">
-            <button type="button" id="mute">Mute</button>
-            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-            <button type="button" id="full-screen">Full-Screen</button>
+          <div id="video-container">
+            <video id="vid" video autobuffer poster="<? $postID = $post->ID;  echo get_post_meta($postID,'cover', true); ?>" >
+              <source src="<? $postID = $post->ID;
+                echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
+            </video>
+            <div id="video-controls">
+              <button type="button" id="play-pause"><i class="fa fa-2x fa-play"></i></button>
+              <input type="range" id="seek-bar" value="0">
+              <button type="button" id="mute">Mute</button>
+              <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+              <button type="button" id="full-screen">Full-Screen</button>
+            </div>
           </div>
           </div>
           <? $pMeta = get_post_meta($postID,'photo1', true);
             if (!empty($pMeta))  { ?>
-              <div class="slide fixed-width">
+              <div class="slide varWidth">
                 <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
               </div>
           <? } ?>
@@ -70,6 +72,28 @@
           </div> -->
       </div>
     </div>
+
+    <script>
+    var postID = "<?php echo $postID?>";
+    var cover = "<?php echo get_post_meta($postID,'cover', true); ?>";
+    var photo1 = "<?php echo get_post_meta($postID,'photo1', true);?>";
+    var photo2 = "<?php echo get_post_meta($postID,'photo2', true);?>";
+    var images = [];
+    function preload() {
+        for (var i = 0; i < arguments.length; i++) {
+            images[i] = new Image();
+            images[i].src = preload.arguments[i];
+        }
+        console.log(images);
+    }
+
+    //-- usage --//
+    preload(
+        cover,
+        photo1,
+        photo2
+    )
+    </script>
 
 
   <div class="content post row">
