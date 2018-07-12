@@ -11,7 +11,7 @@
 <? get_header(); ?>
 
 <div class="top">
-  <a href="<?= get_bloginfo('url'); ?>">
+  <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo"></div>
   </a>
   <button class="hamburger--squeeze" id="hamburger" type="button">
@@ -109,7 +109,7 @@
       </div>
     </div>
 
-  <div class="content post row">
+  <div class="content post row bottom-xs">
       <div class="col-xs-12 col-sm-6 no-padding">
         <article>
           <? the_content(); ?>
@@ -118,48 +118,42 @@
         <div class="col-xs-11 col-sm-5 no-padding">
           <? echo get_post_meta($postID,'description', true); ?>
         </div>
-          <div class="col-xs-1 col-sm-1 no-padding">
-
-          <!-- <?// $next_post = get_next_post();
-          //  if ( is_a( $next_post , 'WP_Post' ) ) : ?>
-                <a href="<? //echo get_permalink( $next_post->ID ); ?>"><? //echo get_the_title( $next_post->ID ); ?></a>
-            <? //endif; ?> -->
-
-
-        <?    $post_id = $postID; // current post ID
-              $cat = get_the_category();
-              $current_cat_id = $cat[0]->cat_ID; // current category ID
-
-            //  var_dump($current_cat_id);
-
-              $args = array(
-                  'category' => $current_cat_id,
-                  'orderby'  => 'post_date',
-                  'order'    => 'ASC'
-              );
-              $posts = get_posts( $args );
-              // get IDs of posts retrieved from get_posts
-              $ids = array();
-              foreach ( $posts as $thepost ) {
-                  $ids[] = $thepost->ID;
-              }
-              // get and echo previous and next post in the same category
-              $thisindex = array_search( $post_id, $ids );
-              $previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
-              $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
-
-              if ( $previd ) {
-                  ?><a rel="prev" href="<?php echo get_permalink($previd) ?>">Previous</a><?php
-              }
-              if ( $nextid ) {
-                  ?><a rel="next" href="<?php echo get_permalink($nextid) ?>">Next</a><?php
-              } ?>
-
-
-          <a href="<?php echo get_permalink($nextid) ?>"><div class="next-page"><div class="arrow"></div></div></a>
-        </div>
-    <? endwhile; endif; ?>
   </div>
+  <div class="arrow-contain">
+
+<?    $post_id = $postID; // current post ID
+      $cat = get_the_category();
+      $current_cat_id = $cat[0]->cat_ID; // current category ID
+
+    //  var_dump($current_cat_id);
+
+      $args = array(
+          'category' => $current_cat_id,
+          'orderby'  => 'post_date',
+          'order'    => 'ASC'
+      );
+      $posts = get_posts( $args );
+      // get IDs of posts retrieved from get_posts
+      $ids = array();
+      foreach ( $posts as $thepost ) {
+          $ids[] = $thepost->ID;
+      }
+      // get and echo previous and next post in the same category
+      $thisindex = array_search( $post_id, $ids );
+      $previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
+      $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
+
+      if ( $previd ) {
+          ?><a rel="prev" href="<?php echo get_permalink($previd) ?>">Previous</a><?php
+      }
+      if ( $nextid ) {
+          ?><a rel="next" href="<?php echo get_permalink($nextid) ?>">Next</a><?php
+      } ?>
+
+
+  <a href="<?php echo get_permalink($nextid) ?>"><div class="next-page"><div class="arrow"></div></div></a>
+</div>
+<? endwhile; endif; ?>
 
   </div>
 

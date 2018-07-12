@@ -14,7 +14,8 @@
 
 <!-- content » home -->
 
-  <div class="content menu row">
+  <div class="content menu row middle-xs">
+    <div class="col-xs-12 row center-xs">
     <!-- FILM COLUMN-->
     <div class="col-xs-12 col-sm-4">
     <?php
@@ -135,7 +136,7 @@
                     <? endwhile; endif; wp_reset_query();?>
 
           </div>
-
+        </div>
   </div>
 
 <? get_footer(); ?>

@@ -235,7 +235,7 @@ a {
       input[type='range'] {
         overflow: hidden;
         -webkit-appearance: none;
-        background-color: #aaa;
+        background-color: #525252;
         height:12px;
         width:60px;
         &:first-of-type {
@@ -274,4 +274,11 @@ a {
   input[type="range"]::-ms-fill-upper {
     background-color: #9a905d;
   }
+}
+
+.arrow-contain {
+  width: calc(100vw - 50px);
+  bottom: 25px;
+  position: absolute;
+  margin: 0 auto;
 }
