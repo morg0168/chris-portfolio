@@ -3,6 +3,9 @@ window.onload = function() {
   // Video
   var video = document.getElementById("vid");
 
+  // Controls
+  var videoControls = document.getElementById("video-controls");
+
   //Slider
   var $slider = $('.slider-nav');
 
@@ -23,13 +26,13 @@ window.onload = function() {
       // Play the video
       video.play();
       // Update the button text to 'Pause'
-      playButton.innerHTML = "<i class=\"fa fa-2x fa-pause\"></i>";
+      playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
     } else {
       // Pause the video
       video.pause();
 
       // Update the button text to 'Play'
-      playButton.innerHTML = "<i class=\"fa fa-2x fa-play\"></i>";
+      playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
     }
   });
 
@@ -65,12 +68,21 @@ window.onload = function() {
     seekBar.value = value;
   });
 
+  // videoControls.addEventListener("mousedown", function() {
+  //   $slider[0].slick.options.draggable = false;
+  // });
+  //
+  // videoControls.addEventListener("mouseup", function() {
+  //   $slider[0].slick.options.draggable = true;
+  // });
+
   // Pause the video when the slider handle is being dragged
   seekBar.addEventListener("mousedown", function() {
     video.pause();
     // Update the button text to 'Play'
-    playButton.innerHTML = "<i class=\"fa fa-2x fa-play\"></i>";
+    playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
     $slider[0].slick.options.draggable = false;
+
   });
 
   // Play the video when the slider handle is dropped

@@ -92,7 +92,7 @@ a {
 }
 
 .slider {
-  margin: 4vw 0;
+  margin: 6vw 0 2vw 0;
 }
 
 .slider-contain {
@@ -103,7 +103,7 @@ a {
 
 .slick-track {
   overflow:hidden;
-  max-height: 34vw;
+  max-height: 27vw;
   //transform:none!important;
 }
 
@@ -120,35 +120,29 @@ a {
   .slide {
     width:100%;
     display:block;
-    min-height:34vw;
+    min-height:27.25vw;
     width:100%;
     &.video-slide {
-      width: 100%;
-      height:100%;
-      overflow:hidden;
-      background: transparent;
-      background-repeat: no-repeat;
+      // width: 100%;
+      // height:100%;
+      // overflow:hidden;
+      // background: transparent;
+      // background-repeat: no-repeat;
       position:relative;
-      max-height:34vw;
-      min-width:60vw;
+      max-height:28vw;
+      min-width:50vw;
+      background-color: black;
       #vid{
-      //  position: absolute;
         top: 50%;
         left: 50%;
         background-repeat: no-repeat!important;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
-        background-size:cover!important;
+        background-size: contain!important;
         position: absolute;
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-  //      z-index: -1000;
-        overflow: hidden;
+        min-width: 60%;
+        min-height: 60%;
+        max-width: 100%;
       }
     }
     .slide-inner {
@@ -234,6 +228,50 @@ a {
   }
   #full-screen {
     position:absolute;
-    top:-29vw;
+    top:-24vw;
+  }
+    /*Chrome*/
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+      input[type='range'] {
+        overflow: hidden;
+        -webkit-appearance: none;
+        background-color: #aaa;
+        height:12px;
+        width:60px;
+        &:first-of-type {
+          width:280px;
+          height: 4px;
+        }
+      }
+
+      input[type='range']::-webkit-slider-runnable-track {
+        height: 6px;
+        -webkit-appearance: none;
+        color: blue;
+        margin-top: -1px;
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        width: 1px;
+        -webkit-appearance: none;
+        height: 11px;
+      //  cursor: ew-resize;
+        background: #fff;
+        box-shadow: -280px 0 0 280px #fff;
+      }
+  }
+  /** FF*/
+  input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7;
+  }
+  input[type="range"]::-moz-range-track {
+    background-color: #9a905d;
+  }
+  /* IE*/
+  input[type="range"]::-ms-fill-lower {
+    background-color: #43e5f7;
+  }
+  input[type="range"]::-ms-fill-upper {
+    background-color: #9a905d;
   }
 }

@@ -34,9 +34,9 @@
               <source src="<? $postID = $post->ID;
                 echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
             </video>
-            <div id="video-controls" class="row between-xs">
-              <button type="button" id="play-pause"><i class="fa fa-2x fa-play"></i></button>
-              <input type="range" id="seek-bar" value="0">
+            <div id="video-controls" class="row between-xs middle-xs">
+              <button type="button" id="play-pause"><i class="fa fa-1x fa-play"></i></button>
+                <input type="range" id="seek-bar" value="0">
               <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
               <button type="button" id="full-screen">FULL</button>
               <span id="time-stamp">0:00</span>
@@ -55,13 +55,49 @@
                   <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
                 </div>
           <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo1', true);
+          <? $pMeta = get_post_meta($postID,'photo3', true);
             if (!empty($pMeta))  { ?>
                 <div class="slide varWidth">
                   <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
                 </div>
           <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo1', true);
+          <? $pMeta = get_post_meta($postID,'photo4', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo5', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo6', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo7', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo8', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo9', true);
+            if (!empty($pMeta))  { ?>
+                <div class="slide varWidth">
+                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
+                </div>
+          <? } ?>
+          <? $pMeta = get_post_meta($postID,'photo10', true);
             if (!empty($pMeta))  { ?>
                 <div class="slide varWidth">
                   <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
@@ -73,38 +109,17 @@
       </div>
     </div>
 
-    <script>
-    var postID = "<?php echo $postID?>";
-    var cover = "<?php echo get_post_meta($postID,'cover', true); ?>";
-    var photo1 = "<?php echo get_post_meta($postID,'photo1', true);?>";
-    var photo2 = "<?php echo get_post_meta($postID,'photo2', true);?>";
-    var images = [];
-    function preload() {
-        for (var i = 0; i < arguments.length; i++) {
-            images[i] = new Image();
-            images[i].src = preload.arguments[i];
-        }
-        console.log(images);
-    }
-
-    //-- usage --//
-    preload(
-        cover,
-        photo1,
-        photo2
-    )
-    </script>
-
-
   <div class="content post row">
       <div class="col-xs-12 col-sm-6 no-padding">
         <article>
           <? the_content(); ?>
         </article>
       </div>
-        <div class="col-xs-12 col-sm-6 no-padding">
+        <div class="col-xs-11 col-sm-5 no-padding">
           <? echo get_post_meta($postID,'description', true); ?>
-          <br/>
+        </div>
+          <div class="col-xs-1 col-sm-1 no-padding">
+
           <!-- <?// $next_post = get_next_post();
           //  if ( is_a( $next_post , 'WP_Post' ) ) : ?>
                 <a href="<? //echo get_permalink( $next_post->ID ); ?>"><? //echo get_the_title( $next_post->ID ); ?></a>
@@ -115,7 +130,7 @@
               $cat = get_the_category();
               $current_cat_id = $cat[0]->cat_ID; // current category ID
 
-              var_dump($current_cat_id);
+            //  var_dump($current_cat_id);
 
               $args = array(
                   'category' => $current_cat_id,
@@ -141,7 +156,7 @@
               } ?>
 
 
-          <a href="#"><div class="next-page"><div class="arrow"></div></div></a>
+          <a href="<?php echo get_permalink($nextid) ?>"><div class="next-page"><div class="arrow"></div></div></a>
         </div>
     <? endwhile; endif; ?>
   </div>
