@@ -14,10 +14,11 @@
 
 <!-- content » home -->
 
-  <div class="content menu row middle-xs">
-    <div class="col-xs-12 row center-xs">
+  <div class="content menu row middle-xs between-xs">
+    <div class="col-xs-12 row start-xs center-sm">
     <!-- FILM COLUMN-->
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4 row start-xs center-sm">
+      <div class="left-aligned">
     <?php
           $arg = null;
           $arg = array(
@@ -39,9 +40,11 @@
           </article>
         <? endwhile; endif; wp_reset_query();?>
       </div>
+    </div>
 
       <!-- CLIENTS COLUMN-->
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 row start-xs center-sm">
+          <div class="left-aligned">
       <?php
             $arg = null;
             $arg = array(
@@ -64,9 +67,11 @@
             </article>
           <? endwhile; endif; wp_reset_query();?>
         </div>
+      </div>
 
         <!-- ACADEMIA COLUMN-->
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-4 row start-xs center-sm">
+            <div class="left-aligned">
         <?php
               $arg = null;
               $arg = array(
@@ -136,6 +141,7 @@
                     <? endwhile; endif; wp_reset_query();?>
 
           </div>
+        </div>
         </div>
   </div>
 

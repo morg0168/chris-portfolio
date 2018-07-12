@@ -33,6 +33,9 @@
   padding: 0 50px 50px 50px;
   &.menu {
     min-height:100vh;
+    a:hover {
+      font-weight:800;
+    }
   }
   @include mobile {
     width: 100%;

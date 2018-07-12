@@ -141,7 +141,7 @@
       // get and echo previous and next post in the same category
       $thisindex = array_search( $post_id, $ids );
       $previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
-      $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
+      $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : $ids[0];
 
       if ( $previd ) {
           ?><a rel="prev" href="<?php echo get_permalink($previd) ?>">Previous</a><?php

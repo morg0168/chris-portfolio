@@ -74,6 +74,10 @@ a {
   padding:0!important;
 }
 
+.left-aligned {
+  text-align: left;
+}
+
 
 /*==================================================================================
   PRESETS
@@ -279,6 +283,6 @@ a {
 .arrow-contain {
   width: calc(100vw - 50px);
   bottom: 25px;
-  position: absolute;
+  position: relative;
   margin: 0 auto;
 }
