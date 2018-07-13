@@ -20,6 +20,25 @@ window.onload = function() {
   //timeStamp
   var timeStamp = document.getElementById("time-stamp");
 
+//mobile Video Play and Pause
+  video.addEventListener("click", function() {
+    if (video.paused == false) {
+      if ($(window).width() <= 767) {
+        video.pause();
+        // Update the button text to 'Play'
+        playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+        playButton.style.opacity = 1;
+      }
+    } else {
+      if ($(window).width() <= 767) {
+        video.play();
+        // Update the button text to 'Pause'
+        playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+        playButton.style.opacity = 0;
+      }
+    }
+  });
+
   // Event listener for the play/pause button
   playButton.addEventListener("click", function() {
     if (video.paused == true) {
@@ -27,12 +46,18 @@ window.onload = function() {
       video.play();
       // Update the button text to 'Pause'
       playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+      if ($(window).width() <= 767) {
+            playButton.style.opacity = 0;
+      }
     } else {
       // Pause the video
       video.pause();
 
       // Update the button text to 'Play'
       playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+      if ($(window).width() <= 767) {
+            playButton.style.opacity = 1;
+      }
     }
   });
 

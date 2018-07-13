@@ -79,8 +79,9 @@
   padding: 0 50px;
   background-color: $color__black;
   box-shadow: $shadow;
+  z-index:9999;
   @include mobile {
-    padding: 0 1rem;
+    padding: 25px 1rem;
   }
   .logo {
     min-width: 130px;
@@ -162,6 +163,36 @@ p {
     height: 15rem;
     margin-bottom: .5rem;
     background-size: cover;
+  }
+}
+
+@include mobile {
+  .slider {
+    display:block;
+    margin-top:0;
+    margin-bottom:0;
+  }
+  .slide {
+    min-height:40vw;
+    &.video-slide {
+      min-height:50vw;
+      border-top:1px solid red;
+      overflow:hidden;
+    }
+    .slide-inner {
+      min-height:40vw;
+    }
+  }
+  #video-controls #full-screen {
+    top:-45vw;
+  }
+  .content.post {
+    order:1;
+    margin-top:8rem;
+  }
+  .top+div {
+    order:2;
+    margin-top:2rem;
   }
 }
 

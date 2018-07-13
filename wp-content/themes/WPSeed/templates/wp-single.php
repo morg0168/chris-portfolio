@@ -14,11 +14,11 @@
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo"></div>
   </a>
-  <button class="hamburger--squeeze" id="hamburger" type="button">
+  <!-- <button class="hamburger--squeeze" id="hamburger" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
-  </button>
+  </button> -->
 
 </div>
 
@@ -144,10 +144,14 @@
       $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : $ids[0];
 
       if ( $previd ) {
-          ?><a rel="prev" href="<?php echo get_permalink($previd) ?>">Previous</a><?php
+          ?>
+          <!-- <a rel="prev" href="<?php //echo get_permalink($previd) ?>">Previous</a> -->
+          <?php
       }
       if ( $nextid ) {
-          ?><a rel="next" href="<?php echo get_permalink($nextid) ?>">Next</a><?php
+          ?>
+          <!-- <a rel="next" href="<?php //echo get_permalink($nextid) ?>">Next</a> -->
+          <?php
       } ?>
 
 

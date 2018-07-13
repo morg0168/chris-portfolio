@@ -218,12 +218,12 @@ a {
 #video-controls {
   z-index: 999;
   position: absolute;
-      bottom: 0;
-      width: calc(100% - 4vw);
-      left: 0;
-      right: 0;
-      margin: 1vw 2vw;
-      color:white;
+  bottom: 0;
+  width: calc(100% - 4vw);
+  left: 0;
+  right: 0;
+  margin: 1vw 2vw;
+  color:white;
   #play-pause, #full-screen {
     color:white;
     &:hover {
@@ -234,6 +234,26 @@ a {
     position:absolute;
     top:-24vw;
   }
+  #full-screen, #seek-bar, #volume-bar {
+    @include mobile {
+      display:none;
+    }
+  }
+    #play-pause {
+      @include mobile {
+        position:absolute;
+        font-size:3em;
+        top:-25vw;
+        left:calc(50vw - 0.5em);
+      }
+    }
+    #time-stamp {
+      @include mobile {
+        position:absolute;
+        right:0;
+      }
+    }
+
     /*Chrome*/
   @media screen and (-webkit-min-device-pixel-ratio:0) {
       input[type='range'] {
@@ -266,17 +286,17 @@ a {
   }
   /** FF*/
   input[type="range"]::-moz-range-progress {
-    background-color: #43e5f7;
+    background-color: #fff;
   }
   input[type="range"]::-moz-range-track {
-    background-color: #9a905d;
+    background-color: #525252;
   }
   /* IE*/
   input[type="range"]::-ms-fill-lower {
-    background-color: #43e5f7;
+    background-color: #fff;
   }
   input[type="range"]::-ms-fill-upper {
-    background-color: #9a905d;
+    background-color: #525252;
   }
 }
 
@@ -285,4 +305,12 @@ a {
   bottom: 25px;
   position: relative;
   margin: 0 auto;
+  @include mobile {
+    position:fixed;
+    z-index:9999;
+    top:25px;
+    right:25px;
+    max-height:50px;
+    max-width:50px;
+  }
 }

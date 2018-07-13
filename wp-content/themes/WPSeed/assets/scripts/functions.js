@@ -23,7 +23,9 @@ $(function() {
     // prevent content scrolling
     $('html').toggleClass('noscroll');
   });
-  initSlick();
+  if ($(window).width() > 767){
+    initSlick();
+  }
 });
 
 // /* Post Carousel  */
@@ -81,6 +83,7 @@ function onWindowResize() {
     $('.slider-nav').slick('destroy');
   } else {
     //  initSlick();
+
   }
 }
 
