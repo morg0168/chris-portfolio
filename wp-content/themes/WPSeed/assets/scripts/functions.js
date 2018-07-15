@@ -80,7 +80,7 @@ window.addEventListener('load', onWindowResize, false);
 function onWindowResize() {
   //alert('resive');
   if ($(window).width() < 767) {
-    $('.slider-nav').slick('destroy');
+  //  $('.slider-nav').slick('destroy');
   } else {
     //  initSlick();
 

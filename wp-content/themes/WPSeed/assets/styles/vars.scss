@@ -16,7 +16,8 @@
 ==================================================================================*/
 
 $base_size:                   2vw;                // scales all `rem` based elements by adding this value as html font-size
-$breakpoint:                  768px;              // breakpoint between @desktop and @mobile mixins
+$breakpoint:                  768px;
+$breakpointtablet:            1025px;              // breakpoint between @desktop and @mobile mixins
 $scaling_endpoint:            1200px;             // scaling of all `rem` based elements stops here
 $base_size_mobile:            $base_size * 2.2;   // scaling multiplicator for mobile viewport
 
@@ -52,7 +53,9 @@ $html__textcolor:              $color__dark;
 
 /* BODY
 /––––––––––––––––––––––––*/
-$body__fontsize:              0.4rem;
+$body__fontsize:              1rem;
+$body__fontsizetablet:        0.7rem;
+$body__fontsizedesktop:       0.4rem;
 $body__fontweight:            400;
 $body__lineheight:            1.3;
 
@@ -104,6 +107,11 @@ $shadow__soft:                0 1px 2px 0 rgba(0, 0, 0, 0.08),    0 1px 5px 0 rg
 }
 @mixin mobile {
   @media (max-width: #{$breakpoint - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$breakpoint}) and (max-width: #{$breakpointtablet - 1px}) {
     @content;
   }
 }

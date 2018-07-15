@@ -26,6 +26,7 @@
 
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
+  <!-- <div class="row middle-xs slider-contain-row"> -->
     <div class="slider-contain">
       <div class="slider slider-nav">
         <div class="slide video-slide">
@@ -108,8 +109,9 @@
           </div> -->
       </div>
     </div>
+  <!-- </div> -->
 
-  <div class="content post row bottom-xs">
+  <div class="content post row ">
       <div class="col-xs-12 col-sm-6 no-padding">
         <article>
           <? the_content(); ?>
