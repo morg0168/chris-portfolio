@@ -1,7 +1,6 @@
 {
   "javascript": [
-    "assets/scripts/modernizr.js",
-      "assets/scripts/slick.js",
+
     "node_modules/wowjs/dist/wow.min.js"
   ],
   "css": [

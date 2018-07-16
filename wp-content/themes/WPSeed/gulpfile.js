@@ -43,6 +43,13 @@ var vendors = require('./gulp-vendors.json');
 // general
 var gulp = require('gulp');
 // var webpack = require('webpack-stream');
+var babel = require('gulp-babel');
+
+// var webpack = require('webpack');
+// var webpackStream = require('webpack-stream');
+// var webpackConfig = require('webpack.config.js');
+
+
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var order = require("gulp-order");
@@ -137,12 +144,19 @@ gulp.task('cachebust', ['clean:cachebust', 'css'], function() {
 // to:      dist/script.min.css
 // note:    modernizr.js is concatinated first in .pipe(order)
 gulp.task('javascript', ['clean:javascript'], function() {
+  //assets/scripts/*.js/
   return gulp.src(assets['javascript'].concat(vendors['javascript']))
     // .pipe(webpack())
     .pipe(order([
+      'node_modules/babel-polyfill/dist/polyfill.js',
       'assets/scripts/modernizr.js',
+    //  'node_modules/three/src/Three.js',
+      'assets/scripts/JDLoader.min.js',
+      'assets/scripts/OrbitControls.js',
       'assets/scripts/*.js'
     ], { base: './' }))
+    //.pipe(babel({presets: ["babel-preset-es2015", "babel-preset-es2016", "babel-preset-es2017"].map(require.resolve)}))
+    //.pipe(webpackStream(webpackConfig), webpack)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))

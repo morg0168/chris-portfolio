@@ -128,6 +128,23 @@ function wpseed_enqueue_scripts_and_styles() {
   wp_deregister_script( 'jquery' );
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, '2.1.4');
   wp_enqueue_script( 'jquery' );
+
+  wp_deregister_script( 'three' );
+  wp_register_script('three', 'https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.js', false, '0.0.1');
+  wp_enqueue_script( 'three' );
+
+  wp_deregister_script( 'tweenlite' );
+  wp_register_script('tweenlite', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js', false, '0.0.1');
+  wp_enqueue_script( 'tweenlite' );
+
+  wp_deregister_script( 'tweenmax' );
+  wp_register_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js', false, '0.0.1');
+  wp_enqueue_script( 'tweenmax' );
+
+  // wp_deregister_script( 'gsap' );
+  // wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', false, '0.0.1');
+  // wp_enqueue_script( 'gsap' );
+
   // scripts
   wp_register_script('wpseed/scripts', get_template_directory_uri() . '/dist/script.min.js', false, array( 'jquery' ), true);
   wp_enqueue_script('wpseed/scripts');

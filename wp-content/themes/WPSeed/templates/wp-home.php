@@ -15,7 +15,12 @@
 
   <div class="content home">
     <div id="container">THREE JS CANVAS GOES HERE</div>
-
   </div>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.js"></script> -->
+  <!-- <script src="./JDLoader.min.js"></script>
+  <script src="./OrbitControls.js"></script> -->
+
+
 
 <? get_footer(); ?>
