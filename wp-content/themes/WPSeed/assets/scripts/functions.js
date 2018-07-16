@@ -14,15 +14,6 @@
 /* Hamburger switch
 /––––––––––––––––––––––––*/
 $(function() {
-  $(document).on('click', '#hamburger', function(event) {
-    alert('new');
-    // show overlay
-    $('#nav_main').toggleClass('hiddenmobile');
-    // switch icon
-    $('#hamburger').toggleClass('is-active');
-    // prevent content scrolling
-    $('html').toggleClass('noscroll');
-  });
   if ($(window).width() > 767){
     initSlick();
   }

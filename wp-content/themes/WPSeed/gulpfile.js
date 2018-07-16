@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "http://localhost/chris-portfolio";
+var browsersync_proxy = "http://localhost:8888/chris-portfolio";
 
 // default asset paths
 var assets = {
@@ -44,6 +44,8 @@ var vendors = require('./gulp-vendors.json');
 var gulp = require('gulp');
 // var webpack = require('webpack-stream');
 var babel = require('gulp-babel');
+
+var rjs = require('gulp-requirejs');
 
 // var webpack = require('webpack');
 // var webpackStream = require('webpack-stream');
@@ -150,7 +152,6 @@ gulp.task('javascript', ['clean:javascript'], function() {
     .pipe(order([
       'node_modules/babel-polyfill/dist/polyfill.js',
       'assets/scripts/modernizr.js',
-    //  'node_modules/three/src/Three.js',
       'assets/scripts/JDLoader.min.js',
       'assets/scripts/OrbitControls.js',
       'assets/scripts/*.js'

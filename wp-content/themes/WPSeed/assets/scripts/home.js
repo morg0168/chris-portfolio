@@ -12,6 +12,9 @@
   window.removeEventListener('touchstart', onFirstTouch, false);
 }, false);
 
+  var container = document.getElementById('container');
+
+document.addEventListener('DOMContentLoaded', function() {
 
   //THREE JS CONFIG PRELOADING
   var scene = new THREE.Scene();
@@ -46,7 +49,6 @@
   var distance = 1100;
   var raycaster;
   var projector;
-  var container = document.getElementById('container');
   var game = new THREE.WebGLRenderer({
     antialias: true
   });
@@ -65,7 +67,6 @@
         // this gets called after any item has been loaded
         //alert('prog');
     };
-
     textureManager.onLoad = function () {
         // all textures are loaded
       //  alert('done');
@@ -158,14 +159,20 @@
     var positionMaxX = -game.domElement.clientWidth;
     var positionMinX = game.domElement.clientWidth;
 
+
     var asteroidInstance;
+    // var foobar = require('./images/asteroid1.JD');
+    // var foobar2 = require('./images/asteroid2.JD');
+    var foobar = 'wp-content/themes/WPSeed/dist/images/asteroid1.JD';
+    var foobar2 = 'wp-content/themes/WPSeed/dist/images/asteroid2.JD';
+
     var asteroid1 = {
-      url: "images/asteroid1.JD",
-      texture: "images/Asteroid_Texture1.jpg"
+      url: foobar,
+      texture: "wp-content/themes/WPSeed/dist/images/Asteroid_Texture1.jpg"
     }
     var asteroid2 = {
-      url: "images/asteroid2.JD",
-      texture: "images/Asteroid_Texture2.jpg"
+      url: foobar2,
+      texture: "wp-content/themes/WPSeed/dist/images/Asteroid_Texture2.jpg"
     }
     // var random_boolean = Math.random() >= 0.5;
     // random_boolean ? asteroidInstance = asteroid1 : asteroidInstance = asteroid2;
@@ -220,6 +227,7 @@
     //let fogDust = new THREE.FogExp2(0xefd1b5, 0.0015, 400);
     //scene.fog = fogDust;
   }
+
   init();
   animate();
 
@@ -246,7 +254,6 @@
       if (object.position.z > 900) {
         //object.position.z = 0;
       }
-
     }
     controls.update();
    controls.autoRotate = true;
@@ -261,3 +268,5 @@
   };
 
   window.addEventListener('resize', onWindowResize, false);
+
+}, false);

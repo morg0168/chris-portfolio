@@ -55,7 +55,7 @@
 }
 
 // add margin to first div
-.top + div {
+.top:not(.home-top) + div {
   @include desktop {
     margin-top: calc(100px + 50px);
   }
@@ -92,11 +92,6 @@
     width: auto;
     min-width: 150px;
     height: 100px;
-    // @include mobile {
-    //   min-width: 150px;
-    //   height: 100px;
-    // }
-    //margin-right: 2rem;
     background-image: url('images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
