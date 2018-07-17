@@ -17,19 +17,41 @@
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo"></div>
   </a>
-  <button class="hamburger--squeeze is-active" id="hamburger" type="button">
-    <span class="hamburger-box">
-      <span class="hamburger-inner"></span>
-    </span>
-  </button>
+  <a href="<?= get_bloginfo('url'); ?>/menu">
+    <button class="hamburger--squeeze is-active" id="hamburger" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </a>
 </div>
 
   <div class="home">
     <div id="container"></div>
     <div class="row middle-xs start-xs center-sm bio">
       <div class="col-xs-12">
-        <p class="intro">At 19, Christian directed the “Kill” music video for the <a href="#">Celestics</a>. Ever since, Christian's craft has brought him to work on a multitude of projects for brands like adidas® to artists like Katy Perry. His projects have been featured on The Fader, Hypebeast, Earmilk, Pigeons & Planes and Clashmusic to mention a few. To add, his concert visual design work has been viewed at festivals around the globe.
-          <br/><br/> Christian currently lives in Montreal, QC, Canada. He enjoys film, electronic music & animation.</p>
+        <p class="intro">
+
+        <?php
+              $arg = null;
+              $arg = array(
+              'numberposts' => 1,
+              'offset' => 0,
+              'category_name' => "bio",
+              'orderby' => 'post_date',
+              'order' => 'ASC',
+              'post_type' => 'post',
+              'post_status' => 'draft, publish, future, pending, private',
+              'suppress_filters' => true
+          );
+
+          $bio = new WP_Query( $arg ); ?>
+
+          <? if ($bio->have_posts() ) : while ($bio->have_posts()) : $bio->the_post();
+          echo the_content();
+          endwhile; endif; wp_reset_query(); ?>
+
+        </p>
           <br/><br/><br/><a href="<?= get_bloginfo('url'); ?>/menu" class="desktop">
             <div class="logo"></div>
           </a>

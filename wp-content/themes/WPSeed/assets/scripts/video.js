@@ -20,6 +20,8 @@ window.onload = function() {
   //timeStamp
   var timeStamp = document.getElementById("time-stamp");
 
+  if (video && (video !== undefined) && (video !== null)) {
+
 //mobile Video Play and Pause
   video.addEventListener("click", function() {
     if (video.paused == false) {
@@ -151,5 +153,6 @@ window.onload = function() {
   }
 
   updateTimeStamp();
+    }
 
 }

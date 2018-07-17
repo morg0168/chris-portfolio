@@ -212,7 +212,7 @@ a {
     cursor: pointer;
     background: 0 0;
     color: transparent;
-    top: 90%;
+    top: 24vw;
     -webkit-transform: none;
     transform: none;
     padding: 0;
@@ -348,8 +348,11 @@ a {
   background-color: transparent;
   border:none;
   box-shadow: none;
+  z-index:999999;
 }
 .home {
+  overflow: hidden;
+  height: 100vh;
   .bio {
     position: absolute;
     z-index: 99999;

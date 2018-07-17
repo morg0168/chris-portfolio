@@ -154,6 +154,7 @@ gulp.task('javascript', ['clean:javascript'], function() {
       'assets/scripts/modernizr.js',
       'assets/scripts/JDLoader.min.js',
       'assets/scripts/OrbitControls.js',
+      //"node_modules/wowjs/dist/wow.min.js",
       'assets/scripts/*.js'
     ], { base: './' }))
     //.pipe(babel({presets: ["babel-preset-es2015", "babel-preset-es2016", "babel-preset-es2017"].map(require.resolve)}))

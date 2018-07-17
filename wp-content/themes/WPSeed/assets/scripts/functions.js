@@ -61,9 +61,7 @@ function initSlick() {
 /––––––––––––––––––––––––*/
 // http://mynameismatthieu.com/WOW/
 $(function() {
-  new WOW().init();
-
-
+  //new WOW().init();
 }); //close jqeuery loaded
 window.addEventListener('resize', onWindowResize, false);
 window.addEventListener('load', onWindowResize, false);

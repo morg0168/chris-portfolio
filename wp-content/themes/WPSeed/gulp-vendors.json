@@ -1,6 +1,6 @@
 {
   "javascript": [
-    "node_modules/wowjs/dist/wow.min.js"
+    
   ],
   "css": [
     "node_modules/hamburgers/dist/hamburgers.min.css",

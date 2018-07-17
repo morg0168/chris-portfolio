@@ -12,30 +12,19 @@
   window.removeEventListener('touchstart', onFirstTouch, false);
 }, false);
 
-  var container = document.getElementById('container');
-
+var container = document.getElementById('container');
 document.addEventListener('DOMContentLoaded', function() {
-
+  if (container && (container !== undefined) && (container !== null)){
   //THREE JS CONFIG PRELOADING
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 5, 3000);
 
 // add controls for the camera
   var controls = new THREE.OrbitControls(camera, game );
-  //controls.target.set(0, 0, 0 );
-  //controls.minDistance = 500;
-  //if is mobile
-  // if (window.USER_IS_TOUCHING) {
-  //     controls.minDistance = 1500;
-  //     controls.minPolarAngle = -Math.PI / 2; // radians
-  //     controls.maxPolarAngle = Math.PI / 2; // radians
-  // } else{
-        controls.minDistance = 0;
-        controls.minPolarAngle = 0; // radians
-        controls.maxPolarAngle = Math.PI; // radians
-  // }
 
-
+  controls.minDistance = 0;
+  controls.minPolarAngle = 0; // radians
+  controls.maxPolarAngle = Math.PI; // radians
   controls.maxDistance = 1500;
   controls.enablePan = false;
   controls.enableZoom = true;
@@ -45,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
   controls.dampingFactor = 0.1;
   controls.rotateSpeed = 0.02;
 
-  // var controls = new THREE.OrbitControls( camera );
   var distance = 1100;
   var raycaster;
   var projector;
@@ -109,14 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
       Aster.rotation.y = getRandomInt(positionMaxY, (positionMinY));
       Aster.rotation.x = getRandomInt(positionMaxX, (positionMinX));
       Aster.rotation.z = getRandomInt(-1500, 1500);
-      //Aster.rotation.y = 100;
-      // for (var j = 0; j < Asteroids.length; j++) {
-      //   if (i !== j && this.children[0].intersects(Asteroids[j])) {
-      //    console.log('splice');
-      //     Asteroids.splice(i, Asteroids[i]);
-      //     scene.remove(Asteroids[i]);
-      //  }
-      // }
 
       this.add(Aster);
       // var box = new THREE.Box3().setFromObject( particle );
@@ -181,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //console.log(asteroidInstance);
       var loader = new THREE.JDLoader();
       loader.load(asteroid1.url, function (data) {
-        console.log(asteroidInstance);
+      //  console.log(asteroidInstance);
           var texture = new THREE.TextureLoader().load(asteroid1.texture);
           texture.wrapS = THREE.RepeatWrapping;
           texture.wrapT = THREE.RepeatWrapping;
@@ -204,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //console.log(asteroidInstance);
       var loader = new THREE.JDLoader(textureManager);
       loader.load(asteroid2.url, function (data) {
-        console.log(asteroidInstance);
+      //  console.log(asteroidInstance);
           var texture = new THREE.TextureLoader().load(asteroid2.texture);
           texture.wrapS = THREE.RepeatWrapping;
           texture.wrapT = THREE.RepeatWrapping;
@@ -227,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //let fogDust = new THREE.FogExp2(0xefd1b5, 0.0015, 400);
     //scene.fog = fogDust;
   }
+
 
   init();
   animate();
@@ -268,5 +249,5 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   window.addEventListener('resize', onWindowResize, false);
-
+}
 }, false);
