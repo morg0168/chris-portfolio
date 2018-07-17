@@ -25,14 +25,14 @@ window.onload = function() {
 //mobile Video Play and Pause
   video.addEventListener("click", function() {
     if (video.paused == false) {
-      if ($(window).width() <= 767) {
+      if ($(window).width() <= 767 || $(window).width() == 812) {
         video.pause();
         // Update the button text to 'Play'
         playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
         playButton.style.opacity = 1;
       }
     } else {
-      if ($(window).width() <= 767) {
+      if ($(window).width() <= 767 || $(window).width() == 812) {
         video.play();
         // Update the button text to 'Pause'
         playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
@@ -48,7 +48,7 @@ window.onload = function() {
       video.play();
       // Update the button text to 'Pause'
       playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
-      if ($(window).width() <= 767) {
+      if ($(window).width() <= 767 || $(window).width() == 812) {
             playButton.style.opacity = 0;
       }
     } else {
@@ -57,7 +57,7 @@ window.onload = function() {
 
       // Update the button text to 'Play'
       playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
-      if ($(window).width() <= 767) {
+      if ($(window).width() <= 767 || $(window).width() == 812) {
             playButton.style.opacity = 1;
       }
     }

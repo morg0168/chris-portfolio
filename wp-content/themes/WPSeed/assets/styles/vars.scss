@@ -109,9 +109,20 @@ $shadow__soft:                0 1px 2px 0 rgba(0, 0, 0, 0.08),    0 1px 5px 0 rg
   @media (max-width: #{$breakpoint - 1px}) {
     @content;
   }
+  @media only screen and (min-device-width : 812px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3)
+  and (orientation : landscape) {
+    @content;
+  }
 }
+
 @mixin tablet {
-  @media (min-width: #{$breakpoint}) and (max-width: #{$breakpointtablet - 1px}) {
+  @media only screen and (min-device-width: #{$breakpoint}) and (max-device-width: #{$breakpointtablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tabletPortrait {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
     @content;
   }
 }

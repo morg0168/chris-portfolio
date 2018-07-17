@@ -1,1 +1,1 @@
-@media (min-width: 768px){.mobile{display:none}}@media (max-width: 767px){.desktop{display:none}}
+@media (min-width: 768px){.mobile{display:none}}@media (max-width: 767px){.desktop{display:none}}@media only screen and (min-device-width: 812px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape){.desktop{display:none}}

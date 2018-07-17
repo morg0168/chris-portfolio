@@ -14,7 +14,7 @@
 /* Hamburger switch
 /––––––––––––––––––––––––*/
 $(function() {
-  if ($(window).width() > 767){
+  if ($(window).width() > 767 && ($(window).width() != 812)){
     initSlick();
   }
 });
