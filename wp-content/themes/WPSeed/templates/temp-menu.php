@@ -15,7 +15,7 @@
 <!-- content » home -->
 
   <div class="content menu row middle-xs between-xs">
-    <div class="col-xs-12 row start-xs center-sm">
+    <div class="menu-container row start-xs center-sm">
     <!-- FILM COLUMN-->
     <div class="col-xs-12 col-sm-4 row start-xs center-sm">
       <div class="left-aligned">
