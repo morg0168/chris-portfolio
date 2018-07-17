@@ -1,6 +1,7 @@
 {
   "javascript": [
-    
+    "node_modules/babel-polyfill/dist/polyfill.js",
+    "node_modules/barba.js/dist/barba.js"
   ],
   "css": [
     "node_modules/hamburgers/dist/hamburgers.min.css",

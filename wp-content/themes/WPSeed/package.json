@@ -24,6 +24,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "barba.js": "^1.0.0",
     "browser-sync": "^2.13.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",

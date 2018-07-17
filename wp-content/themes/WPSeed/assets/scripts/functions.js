@@ -19,6 +19,7 @@ $(function() {
   }
 });
 
+
 // /* Post Carousel  */
 var $slider = $('.slider-nav');
 var getRandomInt = function(min, max) {
