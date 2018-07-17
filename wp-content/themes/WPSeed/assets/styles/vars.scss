@@ -115,6 +115,21 @@ $shadow__soft:                0 1px 2px 0 rgba(0, 0, 0, 0.08),    0 1px 5px 0 rg
   }
 }
 
+@mixin mobileLandscape {
+  @media (max-width: #{$breakpoint - 1px}) and (orientation : landscape) {
+    @content;
+  }
+  @media only screen and (min-device-width: 812px) and (max-device-width: 812px) and (orientation : landscape) {
+    @content;
+  }
+}
+
+@mixin mobilePortrait {
+  @media only screen and (max-width: #{$breakpoint - 1px}) and (orientation : portrait) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media only screen and (min-device-width: #{$breakpoint}) and (max-device-width: #{$breakpointtablet - 1px}) {
     @content;
@@ -163,6 +178,12 @@ $shadow__soft:                0 1px 2px 0 rgba(0, 0, 0, 0.08),    0 1px 5px 0 rg
 .desktop {
   @include mobile {
     display: none;
+  }
+}
+
+.iphoneX {
+  @include mobileLandscape {
+    display:block;
   }
 }
 

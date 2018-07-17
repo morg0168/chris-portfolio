@@ -13,7 +13,7 @@
 
 <!-- content » blog home -->
 
-<div class="top mobile home-top">
+<div class="top mobile home-top iphoneX">
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo"></div>
   </a>
@@ -52,7 +52,7 @@
           endwhile; endif; wp_reset_query(); ?>
 
         </p>
-          <br/><br/><br/><a href="<?= get_bloginfo('url'); ?>/menu" class="desktop">
+        <a href="<?= get_bloginfo('url'); ?>/menu" class="desktop">
             <div class="logo"></div>
           </a>
       </div>

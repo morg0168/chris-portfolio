@@ -177,7 +177,7 @@ a {
   color: white;
   z-index: 9999;
   text-align: right;
-  left: calc(100% - 25px);
+  left: calc(100% - 26px);
   &:hover {
     cursor:pointer;
   }
@@ -190,14 +190,14 @@ a {
 }
 
 .slick-prev {
-  left:25px;
+  left:1rem;
   &::before {
       content:url(images/arrow-left.png);
   }
 }
 
 .slick-next {
-  right:25px;
+  right:1rem;
   &::before {
       content:url(images/arrow-right.png);
   }
@@ -332,14 +332,14 @@ a {
 
 .arrow-contain {
   width: calc(100vw - 50px);
-  bottom: 25px;
+  bottom: 1rem;
   position: relative;
   margin: 0 auto;
   @include mobile {
     position:fixed;
     z-index:9999;
-    top:25px;
-    right:25px;
+    top:1rem;
+    right:1rem;
     max-height:50px;
     max-width:50px;
   }
@@ -353,6 +353,11 @@ a {
 .home {
   overflow: hidden;
   height: 100vh;
+  position:relative;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
   .bio {
     position: absolute;
     z-index: 99999;
@@ -360,12 +365,16 @@ a {
     height: 100%;
     color: white;
     font-size: $body__fontsizetablet;
-    padding:0 25px;
+    padding:0 1rem;
     @include desktop {
       padding: 10vw 10vw 0 10vw;
-      font-size: $body__fontsizetablet;
+      font-size: $body__fontsizedesktop;
     }
-    a{
+    @include mobileLandscape {
+      padding-top: 10vw;
+      font-size: $body__fontsizedesktop;
+    }
+    a {
       font-weight:800;
       text-decoration: underline;
       color:white;
@@ -377,6 +386,9 @@ a {
       background-image: url('images/logo.png');
       background-size: contain;
       background-repeat: no-repeat;
+      @include desktop {
+        margin-top:5vw;
+      }
     }
   }
 }
