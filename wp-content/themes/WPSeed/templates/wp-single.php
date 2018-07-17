@@ -14,19 +14,11 @@
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo"></div>
   </a>
-  <!-- <button class="hamburger--squeeze" id="hamburger" type="button">
-    <span class="hamburger-box">
-      <span class="hamburger-inner"></span>
-    </span>
-  </button> -->
-
 </div>
 
 <!-- content » single post -->
 
-
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
-  <!-- <div class="row middle-xs slider-contain-row"> -->
     <div class="slider-contain">
       <div class="slider slider-nav">
         <div class="slide video-slide">
@@ -44,69 +36,13 @@
             </div>
           </div>
           </div>
-          <? $pMeta = get_post_meta($postID,'photo1', true);
+          <? for ($i = 1; $i <= 50; $i++){
+            $pMeta = get_post_meta($postID,'photo' . $i, true);
             if (!empty($pMeta))  { ?>
               <div class="slide varWidth">
                 <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
               </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo2', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo3', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo4', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo5', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo6', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo7', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo8', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo9', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <? $pMeta = get_post_meta($postID,'photo10', true);
-            if (!empty($pMeta))  { ?>
-                <div class="slide varWidth">
-                  <div class="slide-inner" style="background-image: url('<? echo $pMeta; ?>');"></div>
-                </div>
-          <? } ?>
-          <!-- <div class="slide last-slide">
-            <div class="slide-inner" ></div>
-          </div> -->
+          <? } } ?>
       </div>
     </div>
   <!-- </div> -->
