@@ -13,21 +13,15 @@
 
 /* Hamburger switch
 /––––––––––––––––––––––––*/
-$(function() {
-  if ($(window).width() > 767 && ($(window).width() != 812)){
-    initSlick();
-  }
-});
-
 
 // /* Post Carousel  */
-var $slider = $('.slider-nav');
 var getRandomInt = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function initSlick() {
-  $slider.on('init', function(slick) {
+  var $slider = $('.slider-nav');
+  $slider.not('.slick-initialized').on('init', function(slick) {
             console.log('fired!');
             $('.slider').fadeIn(0);
         }).slick({
@@ -58,25 +52,46 @@ function initSlick() {
       });
   });
 }
-/* WOW
-/––––––––––––––––––––––––*/
-// http://mynameismatthieu.com/WOW/
+
 $(function() {
-  //new WOW().init();
-}); //close jqeuery loaded
-window.addEventListener('resize', onWindowResize, false);
-window.addEventListener('load', onWindowResize, false);
-
-function onWindowResize() {
-  //alert('resive');
-  if ($(window).width() < 767) {
-  //  $('.slider-nav').slick('destroy');
-  } else {
-    //  initSlick();
-
+  if ($(window).width() > 767 && ($(window).width() != 812)){
+    initSlick();
   }
-}
-
+  var transEffect = Barba.BaseTransition.extend({
+    start: function() {
+      console.log('starting');
+      var _this = this;
+      this.newContainerLoading.then(function val() {
+        var newC = $(_this.newContainer);
+        _this.fadeInNewContent(newC);
+      });
+    },
+    fadeInNewContent: function(nc) {
+      var _this = this;
+      nc.hide();
+      $(this.oldContainer).fadeOut(1000).promise().done(function() {
+        nc.css('visibility', 'visible');
+        nc.fadeIn(1000, function() {
+          _this.done();
+          initVideo();
+          if ($(window).width() > 767 && ($(window).width() != 812)){
+            initSlick();
+          }
+        })
+      });
+    }
+  });
+    Barba.Pjax.getTransition = function() {
+      return transEffect;
+    }
+    Barba.Pjax.start();
+    initVideo();
+    
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+      console.log(currentStatus, oldStatus, container);
+    //your listener
+    });
+});
 
 /* Smooth Anchor Scrolling
 /––––––––––––––––––––––––*/

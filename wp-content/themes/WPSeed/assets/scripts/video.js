@@ -1,4 +1,4 @@
-window.onload = function() {
+function initVideo () {
 
   // Video
   var video = document.getElementById("vid");
@@ -137,7 +137,7 @@ window.onload = function() {
     $slider[0].slick.options.draggable = true;
   });
 
-  
+
   //Update time stamp
   function updateTimeStamp() {
     var date = new Date(null);
@@ -155,5 +155,4 @@ window.onload = function() {
 
   updateTimeStamp();
     }
-
 }
