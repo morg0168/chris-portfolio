@@ -9,7 +9,6 @@
     <? include 'templates/str-footer.php' ?>
 
     <? wp_footer() ?>
-      </div>
-    </div>
+  </div>
   </body>
 </html>

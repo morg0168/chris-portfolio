@@ -52,18 +52,76 @@ function initSlick() {
       });
   });
 }
-
 $(function() {
   if ($(window).width() > 767 && ($(window).width() != 812)){
     initSlick();
   }
+  var home = Barba.BaseView.extend({
+    namespace: 'home',
+    onEnter: function() {
+      console.log('home');
+      $('body').removeClass('post');
+      $('body').addClass('home');
+
+    },
+    onEnterCompleted: function() {
+          threeJS.initThree();
+    },
+    onLeave: function() {
+        $('body').removeClass('home');
+    },
+    onLeaveCompleted: function() {
+    }
+  });
+  home.init();
+  var menu = Barba.BaseView.extend({
+    namespace: 'menu',
+    onEnter: function() {
+      console.log('menu');
+      $('body').removeClass('post');
+      $('body').addClass('menu');
+      threeJS.disposeThree();
+    },
+    onEnterCompleted: function() {
+
+    },
+    onLeave: function() {
+      $('body').removeClass('menu');
+    },
+    onLeaveCompleted: function() {
+
+    }
+  });
+  menu.init();
+  var post = Barba.BaseView.extend({
+    namespace: 'post',
+    onEnter: function() {
+      console.log('post');
+      if ($(window).width() > 767 && ($(window).width() != 812)){
+        initSlick();
+      }
+    },
+    onEnterCompleted: function() {
+      $('body').addClass('post');
+      if ($(window).width() > 767 && ($(window).width() != 812)){
+        initSlick();
+      }
+    },
+    onLeave: function() {
+
+    },
+    onLeaveCompleted: function() {
+      // $('body').removeClass('post');
+    }
+  });
+  post.init();
   var transEffect = Barba.BaseTransition.extend({
     start: function() {
-      console.log('starting');
       var _this = this;
       this.newContainerLoading.then(function val() {
         var newC = $(_this.newContainer);
         _this.fadeInNewContent(newC);
+        _this.valid(newC);
       });
     },
     fadeInNewContent: function(nc) {
@@ -74,21 +132,37 @@ $(function() {
         nc.fadeIn(1000, function() {
           _this.done();
           initVideo();
+;
           if ($(window).width() > 767 && ($(window).width() != 812)){
             initSlick();
           }
         })
       });
+    },
+    valid: function(nc) {
+       var prev = Barba.HistoryManager.prevStatus();
+       //console.log(prev);
+      // return prev.namespace === '' ...
     }
   });
     Barba.Pjax.getTransition = function() {
+      // if (FromAsteroids.valid()){
+      //   return FromAsteroids;
+      // }
+      // if (MenuToProject.valid()){
+      //   return MenuToProject;
+      // }
+      // if (MenuToAsteroids.valid()) {
+      //   return MenuToAsteroids;
+      // }
       return transEffect;
     }
     Barba.Pjax.start();
     initVideo();
-    
+    //initThree();
+
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
-      console.log(currentStatus, oldStatus, container);
+      //console.log(currentStatus, oldStatus, container);
     //your listener
     });
 });

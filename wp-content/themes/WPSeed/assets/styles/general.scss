@@ -62,13 +62,57 @@ body  {
   font-size: $body__fontsizedesktop; // actual font size
   font-weight: $body__fontweight;
   line-height: $body__lineheight;
-  &.post_template {
-    background: $color__black;
+  .slider-contain {
+    display:none;
   }
-  &.post_menu {
+  .top {
+    display:none;
+  }
+  &.home {
+    .top.home-top {
+      @include mobile {
+            display:block;
+      }
+    }
+  }
+  &.post {
+    .top {
+      display:block;
+    }
+    background: $color__black;
+    .slider-contain {
+      display: block;
+      @include desktop {
+        margin-top: calc(100px + 4rem);
+      }
+      @include tablet {
+        margin-top: calc(100px + 2rem);
+      }
+      @include tabletPortrait {
+        margin-top:30vw;
+      }
+    }
+  }
+  &.menu {
     background: white;
+    .top {
+      display:none;
+    }
   }
 }
+
+// add margin to first div
+// .top:not(.home-top) + div {
+//   @include desktop {
+//     margin-top: calc(100px + 4rem);
+//   }
+//   @include tablet {
+//     margin-top: calc(100px + 2rem);
+//   }
+//   @include tabletPortrait {
+//     margin-top:30vw;
+//   }
+// }
 
 a {
   color: $a__linkcolor;

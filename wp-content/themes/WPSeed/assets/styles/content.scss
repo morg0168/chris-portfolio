@@ -30,7 +30,7 @@
 .content {
   position: relative;
   width: 100vw;
-  padding: 0 2rem 2rem 1rem;
+  padding: 0 2rem 2rem 50px;
   &.menu {
     min-height:100vh;
     a:hover {
@@ -51,19 +51,6 @@
       width: 100%;
       padding: -1rem;
     }
-  }
-}
-
-// add margin to first div
-.top:not(.home-top) + div {
-  @include desktop {
-    margin-top: calc(100px + 4rem);
-  }
-  @include tablet {
-    margin-top: calc(100px + 2rem);
-  }
-  @include tabletPortrait {
-    margin-top:30vw;
   }
 }
 
@@ -160,7 +147,7 @@ p {
 }
 
 .blog,
-.post {
+.post-item {
   color: $color__white;
   .postinfo {
     margin: 0 0 1rem 0;
@@ -195,7 +182,7 @@ p {
   #video-controls #full-screen {
     top:-46.5vw;
   }
-  .content.post {
+  .content.post-item {
     order:1;
     margin-top:150px;
   }

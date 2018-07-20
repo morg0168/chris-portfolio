@@ -13,7 +13,7 @@
 <? get_header(); ?>
 
 <!-- content » home -->
-
+<div class="barba-container" data-namespace="menu">
   <div class="content menu row middle-xs between-xs">
     <div class="menu-container row start-xs center-sm">
     <!-- FILM COLUMN-->
@@ -144,5 +144,6 @@
         </div>
         </div>
   </div>
+</div>
 
 <? get_footer(); ?>

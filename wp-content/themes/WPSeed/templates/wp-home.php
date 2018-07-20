@@ -11,6 +11,8 @@
 
 <? get_header(); ?>
 
+<div class="barba-container" data-namespace="home">
+
 <!-- content » blog home -->
 
 <div class="top mobile home-top iphoneX">
@@ -58,5 +60,5 @@
       </div>
     </div>
   </div>
-
+</div>
 <? get_footer(); ?>

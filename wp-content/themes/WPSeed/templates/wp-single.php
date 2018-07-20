@@ -10,12 +10,7 @@
 
 <? get_header(); ?>
 
-<div class="top">
-  <a href="<?= get_bloginfo('url'); ?>/menu">
-    <div class="logo"></div>
-  </a>
-</div>
-
+  <div class="barba-container" data-namespace="post">
 <!-- content » single post -->
 
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
@@ -47,13 +42,13 @@
     </div>
   <!-- </div> -->
 
-  <div class="content post row ">
-      <div class="col-xs-12 col-sm-6 no-padding">
+  <div class="content post-item row ">
+      <div class="col-xs-12 col-sm-6">
         <article>
           <? the_content(); ?>
         </article>
       </div>
-        <div class="col-xs-11 col-sm-5 no-padding">
+        <div class="col-xs-11 col-sm-5">
           <? echo get_post_meta($postID,'description', true); ?>
         </div>
   </div>
@@ -99,5 +94,6 @@
 
   </div>
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</div>
+
 <? get_footer(); ?>

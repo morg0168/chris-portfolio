@@ -19,7 +19,7 @@
     <? wp_head(); ?>
   </head>
 
-  <body class="<?php if (is_page_template('default')) { echo post_template; }?>">
+  <body id="body">
       <!-- <div class="top">
         <a href="<?= get_bloginfo('url'); ?>">
           <div class="logo"></div>
@@ -42,5 +42,10 @@
         </nav>
 
       </div> -->
+
+      <div class="top">
+        <a href="<?= get_bloginfo('url'); ?>/menu">
+          <div class="logo"></div>
+        </a>
+      </div>
       <div id="barba-wrapper">
-        <div class="barba-container">
