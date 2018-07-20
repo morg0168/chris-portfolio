@@ -19,7 +19,7 @@
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <div class="logo logoButton"></div>
   </a>
-  <a href="<?= get_bloginfo('url'); ?>/menu">
+  <a href="#">
     <button class="hamburger--squeeze is-active" id="hamburger" type="button">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>

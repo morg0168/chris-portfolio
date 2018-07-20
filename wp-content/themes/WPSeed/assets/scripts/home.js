@@ -192,9 +192,6 @@ function initThree() {
         var color = new THREE.Color(0x00ff00);
         //let fogDust = new THREE.FogExp2(0xefd1b5, 0.0015, 400);
         //scene.fog = fogDust;
-        console.log(this);
-        console.log(this.scene);
-        console.log(scene);
       }
 
 

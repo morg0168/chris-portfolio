@@ -66,6 +66,13 @@ $(function() {
     },
     onEnterCompleted: function() {
         initThree();
+        //Fade out Bio information
+        var $hamburger = $('#hamburger');
+        var $bio = $('.bio');
+        $hamburger.on('click', function() {
+          $hamburger.fadeOut(2000);
+          $bio.fadeOut(2000);
+        });
     },
     onLeave: function() {
         $('body').removeClass('home');
@@ -163,6 +170,7 @@ $(function() {
       //console.log(currentStatus, oldStatus, container);
     //your listener
     });
+
 });
 
 /* Smooth Anchor Scrolling
