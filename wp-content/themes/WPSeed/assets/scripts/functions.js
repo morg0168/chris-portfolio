@@ -65,7 +65,7 @@ $(function() {
 
     },
     onEnterCompleted: function() {
-          threeJS.initThree();
+        initThree();
     },
     onLeave: function() {
         $('body').removeClass('home');
@@ -80,10 +80,8 @@ $(function() {
       console.log('menu');
       $('body').removeClass('post');
       $('body').addClass('menu');
-      threeJS.disposeThree();
     },
     onEnterCompleted: function() {
-
     },
     onLeave: function() {
       $('body').removeClass('menu');

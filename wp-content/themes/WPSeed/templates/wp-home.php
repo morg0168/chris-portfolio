@@ -17,7 +17,7 @@
 
 <div class="top mobile home-top iphoneX">
   <a href="<?= get_bloginfo('url'); ?>/menu">
-    <div class="logo"></div>
+    <div class="logo logoButton"></div>
   </a>
   <a href="<?= get_bloginfo('url'); ?>/menu">
     <button class="hamburger--squeeze is-active" id="hamburger" type="button">
@@ -54,8 +54,8 @@
           endwhile; endif; wp_reset_query(); ?>
 
         </p>
-        <a href="<?= get_bloginfo('url'); ?>/menu" class="desktop">
-            <div class="logo"></div>
+        <a href="<?= get_bloginfo('url'); ?>/menu" class="desktop logo-contain">
+            <div class="logo logoButton"></div>
           </a>
       </div>
     </div>

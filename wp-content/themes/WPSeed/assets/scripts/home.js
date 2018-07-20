@@ -1,5 +1,4 @@
-var threeJS = {
-  initThree : function() {
+function initThree() {
     var container = document.getElementById('container');
     //document.addEventListener('DOMContentLoaded', function() {
     if (container && (container !== undefined) && (container !== null)) {
@@ -9,6 +8,7 @@ var threeJS = {
       // add controls for the camera
       var controls = new THREE.OrbitControls(camera, game);
 
+      controls.enabled = true;
       controls.minDistance = 0;
       controls.minPolarAngle = 0; // radians
       controls.maxPolarAngle = Math.PI; // radians
@@ -235,17 +235,18 @@ var threeJS = {
         camera.aspect = (window.innerWidth) / (window.innerHeight);
         game.setSize(window.innerWidth, window.innerHeight);
         camera.updateProjectionMatrix();
+        // controls.enabled = false;
       };
 
+      function disableOrbitControls() {
+        controls.enabled = false;
+      }
+
       window.addEventListener('resize', onWindowResize, false);
-    } else {
-      //destroy scene
+      var $logoButton = $('.logoButton');
+      $logoButton.on('click', function() {
+        disableOrbitControls();
+      });
 
     }
-  },
-
-  disposeThree: function () {
-  //  console.log(scene);
   }
-
-}

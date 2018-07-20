@@ -426,6 +426,11 @@ a {
       text-decoration: underline;
       color:white;
     }
+    .logo-contain {
+      @include desktop {
+        margin-top:5vw;
+      }
+    }
     .logo {
       width: auto;
       min-width: 100px;
@@ -433,9 +438,7 @@ a {
       background-image: url('images/logo_center.svg');
       background-size: contain;
       background-repeat: no-repeat;
-      @include desktop {
-        margin-top:5vw;
-      }
+      display:inline-block;
     }
   }
 }
