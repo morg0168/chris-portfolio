@@ -14,11 +14,11 @@
 
 <!-- content » home -->
 <div class="barba-container" data-namespace="menu">
-  <div class="content menu row middle-xs between-xs">
+  <div class="menu-list row middle-xs between-xs">
     <div class="menu-container row start-xs center-sm">
     <!-- FILM COLUMN-->
     <div class="col-xs-12 col-sm-4 row start-xs center-sm">
-      <div class="left-aligned">
+      <div class="">
     <?php
           $arg = null;
           $arg = array(
@@ -44,7 +44,7 @@
 
       <!-- CLIENTS COLUMN-->
       <div class="col-xs-12 col-sm-4 row start-xs center-sm">
-          <div class="left-aligned">
+          <div class="">
       <?php
             $arg = null;
             $arg = array(
@@ -71,7 +71,7 @@
 
         <!-- ACADEMIA COLUMN-->
         <div class="col-xs-12 col-sm-4 row start-xs center-sm">
-            <div class="left-aligned">
+            <div class="">
         <?php
               $arg = null;
               $arg = array(

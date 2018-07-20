@@ -148,6 +148,11 @@ a {
   margin-top: -4rem;  // = height of .top
 }
 
+.postItem-contain {
+  margin-left:0;
+  margin-right:0;
+}
+
 .slider {
   margin: 0vw 0 2vw 0;
 }
@@ -156,6 +161,10 @@ a {
   width: 100vw;
   position: relative;
   left: 0;
+  order:2;
+  @include desktop {
+    order: 1;
+  }
 }
 
 .slick-track {
@@ -382,6 +391,7 @@ a {
   bottom: 1rem;
   position: relative;
   margin: 0 auto;
+  order:3;
   @include mobile {
     position:fixed;
     z-index:9999;

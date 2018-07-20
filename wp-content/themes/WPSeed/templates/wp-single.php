@@ -12,7 +12,7 @@
 
   <div class="barba-container" data-namespace="post">
 <!-- content » single post -->
-
+<div class="row postItem-contain">
     <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
     <div class="slider-contain">
       <div class="slider slider-nav">
@@ -93,7 +93,7 @@
 <? endwhile; endif; ?>
 
   </div>
-
+</div>
 </div>
 
 <? get_footer(); ?>

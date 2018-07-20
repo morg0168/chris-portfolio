@@ -31,11 +31,9 @@
   position: relative;
   width: 100vw;
   padding: 0 2rem 2rem 50px;
-  &.menu {
-    min-height:100vh;
-    a:hover {
-      font-weight:800;
-    }
+  order:1;
+  @include desktop {
+    order:2;
   }
   @include mobile {
     width: 100%;
@@ -51,6 +49,16 @@
       width: 100%;
       padding: -1rem;
     }
+  }
+}
+.menu-list {
+  min-height:100vh;
+  a:hover {
+    font-weight:800;
+  }
+  @include mobile {
+    width: 100%;
+    padding: 1rem;
   }
 }
 
@@ -223,6 +231,12 @@ p {
 //   }
 // }
 
+@include mobile {
+    .menu-container {
+      padding: 0 1rem;
+    }
+}
+
 
 /* TEMPLATE - SUBSITES
 /––––––––––––––––––––––––*/
@@ -250,6 +264,7 @@ p {
     }
   }
 }
+
 
 
 

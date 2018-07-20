@@ -20,29 +20,6 @@
   </head>
 
   <body id="body">
-      <!-- <div class="top">
-        <a href="<?= get_bloginfo('url'); ?>">
-          <div class="logo"></div>
-        </a>
-        <button class="hamburger--squeeze" id="hamburger" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <nav id="nav_main" class="hiddenmobile">
-          <?
-            wp_nav_menu([
-              'menu_class'=> false,
-              'menu_id' => false,
-              'container'=> false,
-              'depth' => 1,
-              'theme_location' => 'mainmenu'
-            ]);
-          ?>
-        </nav>
-
-      </div> -->
-
       <div class="top">
         <a href="<?= get_bloginfo('url'); ?>/menu">
           <div class="logo"></div>
