@@ -169,6 +169,11 @@ p {
     margin-bottom: .5rem;
     background-size: cover;
   }
+  .project-desc {
+    @include desktop {
+      padding-left: calc(50px + 1rem);
+    }
+  }
 }
 
 @include mobile {
