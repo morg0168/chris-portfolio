@@ -25,18 +25,16 @@ function initVideo () {
 //mobile Video Play and Pause
   video.addEventListener("click", function() {
     if (video.paused == false) {
-      if ($(window).width() <= 767 || $(window).width() == 812) {
         video.pause();
-        // Update the button text to 'Play'
         playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
         playButton.style.opacity = 1;
-      }
     } else {
+      video.play();
+      playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
       if ($(window).width() <= 767 || $(window).width() == 812) {
-        video.play();
-        // Update the button text to 'Pause'
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
         playButton.style.opacity = 0;
+      } else {
+          playButton.style.opacity = 1;
       }
     }
   });
@@ -81,9 +79,6 @@ function initVideo () {
 
     // Update the video time
     video.currentTime = time;
-    console.log(video.currentTime);
-    console.log(video.duration);
-
   });
 
   // Update the seek bar as the video plays
