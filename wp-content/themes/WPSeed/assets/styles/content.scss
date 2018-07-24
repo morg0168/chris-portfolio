@@ -276,6 +276,22 @@ p {
   }
 }
 
+//LOCK IPAD TO LANDSCAPE
+@include tabletPortrait {
+  body {
+    &.post {
+      .turn-ipad {
+        display: block;
+        color:white;
+        font-size:2rem;
+      }
+      #barba-wrapper {
+        display:none;
+      }
+    }
+  }
+}
+
 
 
 

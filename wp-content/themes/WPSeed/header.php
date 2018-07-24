@@ -25,4 +25,5 @@
           <div class="logo"></div>
         </a>
       </div>
+      <div class="turn-ipad col-xs-12 center-xs no-padding"><p>TURN DEVICE</p></div>
       <div id="barba-wrapper">
