@@ -22,8 +22,8 @@ var getRandomInt = function(min, max) {
 function initSlick() {
   var $slider = $('.slider-nav');
   $slider.not('.slick-initialized').on('init', function(slick) {
-            console.log('fired!');
-            $('.slider').fadeIn(0);
+            //console.log('fired!');
+            $('.slider').fadeIn(1000);
         }).slick({
     slidesToShow: 2,
     swipeToSlide: true,
@@ -61,14 +61,15 @@ $(function() {
     onEnter: function() {
       console.log('home');
       $('body').removeClass('post');
+      var $bio = $('.bio');
       $('body').addClass('home');
-
     },
     onEnterCompleted: function() {
+    //  $('body').fadeIn('1000');
+        var $bio = $('.bio');
         initThree();
         //Fade out Bio information
         var $hamburger = $('#hamburger');
-        var $bio = $('.bio');
         $hamburger.on('click', function() {
           $hamburger.fadeOut(2000);
           $bio.fadeOut(2000);
@@ -84,9 +85,11 @@ $(function() {
   var menu = Barba.BaseView.extend({
     namespace: 'menu',
     onEnter: function() {
-      console.log('menu');
-      $('body').removeClass('post');
-      $('body').addClass('menu');
+      $('body').removeClass('post').addClass('menu');
+      $('.post-item').hide();
+      $('.top').animate({'opacity': 0}, 1000, function() {
+        $(this).after($(this).css({'background': 'transparent'}));
+      });
     },
     onEnterCompleted: function() {
     },
@@ -101,22 +104,25 @@ $(function() {
   var post = Barba.BaseView.extend({
     namespace: 'post',
     onEnter: function() {
-      console.log('post');
       if ($(window).width() > 767 && ($(window).width() != 812)){
         initSlick();
       }
     },
     onEnterCompleted: function() {
       $('body').addClass('post');
+      var $slider = $('.slider-contain');
+      $slider.fadeIn(1000);
       if ($(window).width() > 767 && ($(window).width() != 812)){
         initSlick();
       }
+    $('.top').animate({'opacity': 1}, 1000, function() {
+      $(this).after($(this).css({'background': 'black'}));
+    });
+     $('.barba-container').animate({'opacity': 1}, 1000);
     },
     onLeave: function() {
-
     },
     onLeaveCompleted: function() {
-      // $('body').removeClass('post');
     }
   });
   post.init();
@@ -137,7 +143,6 @@ $(function() {
         nc.fadeIn(1000, function() {
           _this.done();
           initVideo();
-;
           if ($(window).width() > 767 && ($(window).width() != 812)){
             initSlick();
           }
