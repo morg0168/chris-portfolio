@@ -22,15 +22,15 @@ var getRandomInt = function(min, max) {
 function initSlick() {
   var $slider = $('.slider-nav');
   $slider.not('.slick-initialized').on('init', function(slick) {
-            //console.log('fired!');
-            $('.slider').fadeIn(1000);
-        }).slick({
+    //console.log('fired!');
+    $('.slider').fadeIn(1000);
+  }).slick({
     slidesToShow: 2,
     swipeToSlide: true,
     dots: false,
     draggable: true,
     arrows: true,
-     lazyLoad: 'ondemand',
+    lazyLoad: 'ondemand',
     focusOnSelect: true,
     infinite: false,
     initialSlide: 0,
@@ -47,13 +47,13 @@ function initSlick() {
     counter++;
     var currentTotal = total - 1;
     var newVal = leftOver / document.documentElement.clientWidth * 100;
-      varWidthSlides.css({
-        "min-width": newVal + "vw",
-      });
+    varWidthSlides.css({
+      "min-width": newVal + "vw",
+    });
   });
 }
 $(function() {
-  if ($(window).width() > 767 && ($(window).width() != 812)){
+  if ($(window).width() > 767 && ($(window).width() != 812)) {
     initSlick();
   }
   var home = Barba.BaseView.extend({
@@ -65,21 +65,20 @@ $(function() {
       $('body').addClass('home');
     },
     onEnterCompleted: function() {
-    //  $('body').fadeIn('1000');
-        var $bio = $('.bio');
-        initThree();
-        //Fade out Bio information
-        var $hamburger = $('#hamburger');
-        $hamburger.on('click', function() {
-          $hamburger.fadeOut(2000);
-          $bio.fadeOut(2000);
-        });
+      //  $('body').fadeIn('1000');
+      var $bio = $('.bio');
+      initThree();
+      //Fade out Bio information
+      var $hamburger = $('#hamburger');
+      $hamburger.on('click', function() {
+        $hamburger.fadeOut(2000);
+        $bio.fadeOut(2000);
+      });
     },
     onLeave: function() {
-        $('body').removeClass('home');
+      $('body').removeClass('home');
     },
-    onLeaveCompleted: function() {
-    }
+    onLeaveCompleted: function() {}
   });
   home.init();
   var menu = Barba.BaseView.extend({
@@ -87,12 +86,15 @@ $(function() {
     onEnter: function() {
       $('body').removeClass('post').addClass('menu');
       $('.post-item').hide();
-      $('.top').animate({'opacity': 0}, 1000, function() {
-        $(this).after($(this).css({'background': 'transparent'}));
+      $('.top').animate({
+        'opacity': 0
+      }, 1000, function() {
+        $(this).after($(this).css({
+          'background': 'transparent'
+        }));
       });
     },
-    onEnterCompleted: function() {
-    },
+    onEnterCompleted: function() {},
     onLeave: function() {
       $('body').removeClass('menu');
     },
@@ -104,7 +106,7 @@ $(function() {
   var post = Barba.BaseView.extend({
     namespace: 'post',
     onEnter: function() {
-      if ($(window).width() > 767 && ($(window).width() != 812)){
+      if ($(window).width() > 767 && ($(window).width() != 812)) {
         initSlick();
       }
     },
@@ -112,18 +114,22 @@ $(function() {
       $('body').addClass('post');
       var $slider = $('.slider-contain');
       $slider.fadeIn(1000);
-      if ($(window).width() > 767 && ($(window).width() != 812)){
+      if ($(window).width() > 767 && ($(window).width() != 812)) {
         initSlick();
       }
-    $('.top').animate({'opacity': 1}, 1000, function() {
-      $(this).after($(this).css({'background': 'black'}));
-    });
-     $('.barba-container').animate({'opacity': 1}, 1000);
+      $('.top').animate({
+        'opacity': 1
+      }, 1000, function() {
+        $(this).after($(this).css({
+          'background': 'black'
+        }));
+      });
+      $('.barba-container').animate({
+        'opacity': 1
+      }, 1000);
     },
-    onLeave: function() {
-    },
-    onLeaveCompleted: function() {
-    }
+    onLeave: function() {},
+    onLeaveCompleted: function() {}
   });
   post.init();
   var transEffect = Barba.BaseTransition.extend({
@@ -131,6 +137,9 @@ $(function() {
       var _this = this;
       this.newContainerLoading.then(function val() {
         var newC = $(_this.newContainer);
+        $("html, body").animate({
+          scrollTop: 0
+        }, "slow");
         _this.fadeInNewContent(newC);
         _this.valid(newC);
       });
@@ -143,38 +152,36 @@ $(function() {
         nc.fadeIn(1000, function() {
           _this.done();
           initVideo();
-          if ($(window).width() > 767 && ($(window).width() != 812)){
+          if ($(window).width() > 767 && ($(window).width() != 812)) {
             initSlick();
           }
         })
       });
     },
     valid: function(nc) {
-       var prev = Barba.HistoryManager.prevStatus();
-       //console.log(prev);
+      var prev = Barba.HistoryManager.prevStatus();
+      //console.log(prev);
       // return prev.namespace === '' ...
     }
   });
-    Barba.Pjax.getTransition = function() {
-      // if (FromAsteroids.valid()){
-      //   return FromAsteroids;
-      // }
-      // if (MenuToProject.valid()){
-      //   return MenuToProject;
-      // }
-      // if (MenuToAsteroids.valid()) {
-      //   return MenuToAsteroids;
-      // }
-      return transEffect;
-    }
-    Barba.Pjax.start();
-    initVideo();
-    //initThree();
+  Barba.Pjax.getTransition = function() {
+    // if (FromAsteroids.valid()){
+    //   return FromAsteroids;
+    // }
+    // if (MenuToProject.valid()){
+    //   return MenuToProject;
+    // }
+    // if (MenuToAsteroids.valid()) {
+    //   return MenuToAsteroids;
+    // }
+    return transEffect;
+  }
+  Barba.Pjax.start();
+  initVideo();
 
-    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
-      //console.log(currentStatus, oldStatus, container);
-    //your listener
-    });
+  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+    //history.scrollRestoration = 'manual';
+  });
 
 });
 
