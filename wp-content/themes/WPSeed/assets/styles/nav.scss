@@ -65,7 +65,7 @@ nav {
     #hamburger {
       // » https://jonsuh.com/hamburgers/
       position: absolute;
-      top: 1rem;
+      top: 2rem;
       right: 1rem;
       z-index: 260;
       display: block;
@@ -118,6 +118,13 @@ nav {
           content: '';
         }
       }
+    }
+  }
+}
+@include mobileLandscape {
+  .top {
+    #hamburger {
+      top:50px;
     }
   }
 }
