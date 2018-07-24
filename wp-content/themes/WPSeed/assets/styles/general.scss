@@ -80,6 +80,7 @@ body  {
     }
   }
   &.post {
+    margin-left:0;
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
@@ -98,9 +99,9 @@ body  {
       @include desktop {
         margin-top: calc(100px + 4rem);
       }
-      @include tablet {
-        margin-top: calc(100px + 2rem);
-      }
+      // @include tablet {
+      //   margin-top: calc(100px + 2rem);
+      // }
       @include tabletPortrait {
         margin-top:30vw;
       }

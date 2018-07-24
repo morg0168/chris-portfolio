@@ -158,6 +158,9 @@ p {
 .blog,
 .post-item {
   color: $color__white;
+  @include tablet {
+    font-size: $body__fontsizedesktop;
+  }
   .postinfo {
     margin: 0 0 1rem 0;
     color: $color__grey;

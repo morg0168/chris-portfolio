@@ -60,12 +60,9 @@ $(function() {
     namespace: 'home',
     onEnter: function() {
       console.log('home');
-      $('body').removeClass('post');
-      var $bio = $('.bio');
-      $('body').addClass('home');
+      $('body').removeClass('post row middle-xs').addClass('home');
     },
     onEnterCompleted: function() {
-      //  $('body').fadeIn('1000');
       var $bio = $('.bio');
       initThree();
       //Fade out Bio information
@@ -84,7 +81,7 @@ $(function() {
   var menu = Barba.BaseView.extend({
     namespace: 'menu',
     onEnter: function() {
-      $('body').removeClass('post').addClass('menu');
+      $('body').removeClass('post row middle-xs').addClass('menu');
       $('.post-item').hide();
       $('.top').animate({
         'opacity': 0
@@ -111,7 +108,7 @@ $(function() {
       }
     },
     onEnterCompleted: function() {
-      $('body').addClass('post');
+      $('body').addClass('post row middle-xs');
       var $slider = $('.slider-contain');
       $slider.fadeIn(1000);
       if ($(window).width() > 767 && ($(window).width() != 812)) {
