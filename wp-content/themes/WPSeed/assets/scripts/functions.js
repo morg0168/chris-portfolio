@@ -67,9 +67,13 @@ $(function() {
       initThree();
       //Fade out Bio information
       var $hamburger = $('#hamburger');
+      var getUrl = window.location;
       $hamburger.on('click', function() {
-        $hamburger.fadeOut(2000);
-        $bio.fadeOut(2000);
+        if ($bio.hasClass('faded')) {
+          $hamburger.closest('a').attr('href', window.globalObject.homeUrl + '/menu/');
+        } else {
+          $bio.fadeOut(2000).addClass('faded');
+        }
       });
     },
     onLeave: function() {

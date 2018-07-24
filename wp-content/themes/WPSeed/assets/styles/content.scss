@@ -284,9 +284,16 @@ p {
         display: block;
         color:white;
         font-size:2rem;
+        p {
+          position: absolute;
+          width: 280px;
+          height: 200px;
+          left: calc(50vw - 140px);
+          top: calc(50vh - 100px + 4rem);
+        }
       }
       #barba-wrapper {
-        display:none;
+        opacity:0;
       }
     }
   }

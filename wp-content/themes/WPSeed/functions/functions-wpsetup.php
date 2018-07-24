@@ -147,13 +147,22 @@ function wpseed_enqueue_scripts_and_styles() {
 
   // scripts
   wp_register_script('wpseed/scripts', get_template_directory_uri() . '/dist/script.min.js', false, array( 'jquery' ), true);
-  wp_enqueue_script('wpseed/scripts');
+
+  wp_localize_script(
+    'wpseed/scripts',
+    'globalObject',
+      array(
+        'homeUrl' => esc_url(home_url())
+      )
+  );
+    wp_enqueue_script('wpseed/scripts');
   // flexboxgrid
 //  wp_enqueue_style('wpseed/styles', get_template_directory_uri() . wpseed_get_cachebusted_css(), false, null);
   // styles
   wp_enqueue_style('wpseed/styles', get_template_directory_uri() . wpseed_get_cachebusted_css(), false, null);
 }
 add_action('wp_enqueue_scripts', 'wpseed_enqueue_scripts_and_styles');
+
 
 
 /* 2.2 SETUP WP-MENUS
