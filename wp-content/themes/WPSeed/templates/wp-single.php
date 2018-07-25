@@ -17,20 +17,26 @@
     <div class="slider-contain">
       <div class="slider slider-nav">
         <div class="slide video-slide">
-          <div id="video-container">
-            <video id="vid" video autobuffer poster="<? $postID = $post->ID;  echo get_post_meta($postID,'cover', true); ?>" >
-              <source src="<? $postID = $post->ID;
-                echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
-            </video>
-            <div id="video-controls" class="row between-xs middle-xs">
-              <button type="button" id="play-pause"><i class="fa fa-1x fa-play"></i></button>
-                <input type="range" id="seek-bar" value="0">
-              <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-              <button type="button" id="full-screen">FULL</button>
-              <span id="time-stamp">0:00</span>
-            </div>
-          </div>
-          </div>
+            <?  $postID = $post->ID;
+            $video = get_post_meta($postID,'video', true);
+            if (!empty($video)) { ?>
+                <div id="video-container">
+                  <video id="vid" video autobuffer poster="<? echo get_post_meta($postID,'cover', true); ?>" >
+                    <source src="<? $postID = $post->ID;
+                      echo get_post_meta($postID,'video', true); ?>" type="video/mp4">
+                  </video>
+                  <div id="video-controls" class="row between-xs middle-xs">
+                    <button type="button" id="play-pause"><i class="fa fa-1x fa-play"></i></button>
+                      <input type="range" id="seek-bar" value="0">
+                    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+                    <button type="button" id="full-screen">FULL</button>
+                    <span id="time-stamp">0:00</span>
+                  </div>
+                </div>
+          <?  } else { $coverPhoto = get_post_meta($postID, 'coverPhoto', true); ?>
+              <div class="slide-inner" style="background-image: url('<? echo $coverPhoto; ?>');"></div>
+          <? } ?>
+        </div> <!-- close video slide -->
           <? for ($i = 1; $i <= 50; $i++){
             $pMeta = get_post_meta($postID,'photo' . $i, true);
             if (!empty($pMeta))  { ?>
