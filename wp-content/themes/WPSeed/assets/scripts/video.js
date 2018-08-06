@@ -22,22 +22,6 @@ function initVideo() {
 
   if (video && (video !== undefined) && (video !== null)) {
 
-    //Fix Video Bug from Prod Cross Browser
-    document.addEventListener('webkitfullscreenchange', exitHandler, false);
-    document.addEventListener('mozfullscreenchange', exitHandler, false);
-    document.addEventListener('fullscreenchange', exitHandler, false);
-    document.addEventListener('MSFullscreenChange', exitHandler, false);
-
-    function exitHandler() {
-      var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-      // if in fullscreen mode fullscreenElement won't be null
-      if (fullscreenElement == null) {
-        video.pause();
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
-        playButton.style.opacity = 1;
-      }
-    }
-
     //mobile Video Play and Pause
     video.addEventListener("click", function() {
       if (video.paused == false) {
@@ -164,5 +148,20 @@ function initVideo() {
     }
 
     updateTimeStamp();
+  }
+  //Fix Video Bug from Prod Cross Browser
+  document.addEventListener('webkitfullscreenchange', exitHandler, false);
+  document.addEventListener('mozfullscreenchange', exitHandler, false);
+  document.addEventListener('fullscreenchange', exitHandler, false);
+  document.addEventListener('MSFullscreenChange', exitHandler, false);
+
+  function exitHandler() {
+    var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+    // if in fullscreen mode fullscreenElement won't be null
+    if (fullscreenElement == null) {
+      video.pause();
+      playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+      playButton.style.opacity = 1;
+    }
   }
 }
