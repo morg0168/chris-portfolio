@@ -24,16 +24,18 @@ function initVideo() {
 
     //mobile Video Play and Pause
     video.addEventListener("click", function() {
-      if (video.paused == false) {
-        video.pause();
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
-        playButton.style.opacity = 1;
-      } else {
-        video.play();
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+      if (video.paused == true) {
         if ($(window).width() <= 767 || $(window).width() == 812) {
           playButton.style.opacity = 0;
         } else {
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+          playButton.style.opacity = 1;
+        }
+        video.play();
+      } else {
+        video.pause();
+        playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+        if ($(window).width() <= 767 || $(window).width() == 812) {
           playButton.style.opacity = 1;
         }
       }
@@ -41,25 +43,57 @@ function initVideo() {
 
     // Event listener for the play/pause button
     playButton.addEventListener("click", function() {
-      if (video.paused == true) {
-        // Play the video
-        video.play();
-        // Update the button text to 'Pause'
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
-        if ($(window).width() <= 767 || $(window).width() == 812) {
-          playButton.style.opacity = 0;
+      if ($(window).width() > 767 && $(window).width() != 812) {
+        if (video.paused == true) {
+          video.play();
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+        } else {
+          video.pause();
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
         }
-      } else {
-        // Pause the video
-        video.pause();
-
-        // Update the button text to 'Play'
-        playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
-        if ($(window).width() <= 767 || $(window).width() == 812) {
+      } else if ($(window).width() <= 767 || $(window).width() == 812) {
+        if (video.paused == true) {
+          video.play();
+          playButton.style.opacity = 0;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+        } else {
+          video.pause();
           playButton.style.opacity = 1;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
         }
       }
     });
+
+    document.addEventListener('webkitfullscreenchange', exitHandler, false);
+    document.addEventListener('mozfullscreenchange', exitHandler, false);
+    document.addEventListener('fullscreenchange', exitHandler, false);
+    document.addEventListener('MSFullscreenChange', exitHandler, false);
+
+    function exitHandler() {
+      var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+      // console.log(fullscreenElement);
+      if (fullscreenElement == null) { //paused and minimized
+        if ($(window).width() <= 767 || $(window).width() == 812) {
+          video.pause();
+          playButton.style.opacity = 1;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+        } else {
+          video.pause();
+          playButton.style.opacity = 1;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
+        }
+      } else { //playing and fullScreenButton
+        if ($(window).width() <= 767 || $(window).width() == 812) {
+          video.play();
+          playButton.style.opacity = 0;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+        } else {
+          video.play();
+          playButton.style.opacity = 0;
+          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
+        }
+      }
+    }
 
     // Event listener for the full-screen button
     fullScreenButton.addEventListener("click", function() {
@@ -149,20 +183,5 @@ function initVideo() {
 
     updateTimeStamp();
   }
-  //Fix Video Bug from Prod Cross Browser
-  document.addEventListener('webkitfullscreenchange', exitHandler, false);
-  document.addEventListener('mozfullscreenchange', exitHandler, false);
-  document.addEventListener('fullscreenchange', exitHandler, false);
-  document.addEventListener('MSFullscreenChange', exitHandler, false);
 
-  function exitHandler() {
-    var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-    // if in fullscreen mode fullscreenElement won't be null
-    console.log(fullscreenElement);
-    if (fullscreenElement == null) {
-      //video.pause();
-      playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
-      playButton.style.opacity = 1;
-    }
-  }
 }
