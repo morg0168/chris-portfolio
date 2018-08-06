@@ -22,6 +22,16 @@ function initVideo() {
 
   if (video && (video !== undefined) && (video !== null)) {
 
+    var $root = $('html');
+    var isTouch = 'ontouchstart' in document.documentElement;
+    document.addEventListener("mouseup", handleMobileVideo, false);
+    document.addEventListener("touchend", handleMobileVideo, false);
+    function handleMobileVideo() {
+      if (isTouch && video.paused == true) {
+          playButton.style.opacity = 1;
+      }
+    }
+
     //mobile Video Play and Pause
     video.addEventListener("click", function() {
       if (video.paused == true) {
