@@ -1,4 +1,4 @@
-function initVideo() {
+function initVideo(video) {
 
   // Video
   var video = document.getElementById("vid");
@@ -73,14 +73,13 @@ function initVideo() {
       }
     });
 
-    document.addEventListener('webkitfullscreenchange', exitHandler, false);
-    document.addEventListener('mozfullscreenchange', exitHandler, false);
-    document.addEventListener('fullscreenchange', exitHandler, false);
-    document.addEventListener('MSFullscreenChange', exitHandler, false);
+    video.addEventListener('webkitfullscreenchange', exitHandler, false);
+    video.addEventListener('mozfullscreenchange', exitHandler, false);
+    video.addEventListener('fullscreenchange', exitHandler, false);
+    video.addEventListener('MSFullscreenChange', exitHandler, false);
 
     function exitHandler() {
       var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-      // console.log(fullscreenElement);
       if (fullscreenElement == null) { //paused and minimized
         if ($(window).width() <= 767 || $(window).width() == 812) {
           video.pause();
