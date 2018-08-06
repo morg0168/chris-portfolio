@@ -65,7 +65,6 @@ function initVideo() {
         if (video.paused == true) {
           video.play();
           playButton.style.opacity = 0;
-          playButton.innerHTML = "<i class=\"fa fa-1x fa-pause\"></i>";
         } else {
           video.pause();
           playButton.style.opacity = 1;
