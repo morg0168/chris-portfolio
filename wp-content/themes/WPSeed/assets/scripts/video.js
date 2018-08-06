@@ -158,8 +158,9 @@ function initVideo() {
   function exitHandler() {
     var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
     // if in fullscreen mode fullscreenElement won't be null
+    console.log(fullscreenElement);
     if (fullscreenElement == null) {
-      video.pause();
+      //video.pause();
       playButton.innerHTML = "<i class=\"fa fa-1x fa-play\"></i>";
       playButton.style.opacity = 1;
     }
