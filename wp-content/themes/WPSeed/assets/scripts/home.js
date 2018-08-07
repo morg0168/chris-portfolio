@@ -247,12 +247,18 @@ function initThree() {
 
       window.addEventListener('resize', onWindowResize, false);
       var $logoButton = $('.logoButton');
+      var $bioDiv = $('.bio > div');
       $logoButton.on('click', function() {
         disableOrbitControls();
       });
-      if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
-        disableOrbitControls();
-      }
+      $bioDiv.on('touchstart', function() {
+        if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
+          disableOrbitControls();
+        }
+      });
+      //if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
+        //disableOrbitControls();
+      //}
       var $hamburger = $('#hamburger');
       $hamburger.on('mouseup', function() {
         enableOrbitControls();
