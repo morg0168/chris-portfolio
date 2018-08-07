@@ -174,7 +174,8 @@ p {
   }
   .project-desc {
     @include desktop {
-      padding-left: calc(50px + 1rem);
+      margin-left: calc(50px + 1rem);
+      padding-left:0;
       max-height: 80px;
       max-width: 550px;
       overflow: scroll;
