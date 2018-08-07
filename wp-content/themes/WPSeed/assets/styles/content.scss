@@ -168,9 +168,16 @@ p {
     @include desktop {
       margin-left: calc(50px + 1rem);
       padding-left: 0;
-      max-height: 80px;
-      max-width: 550px;
+      height: 80px;
+      width: 550px;
+      overflow:hidden;
     }
+    .inner {
+      @include desktop {
+        height:80px;
+      }
+    }
+
   }
 }
 @include mobile {
