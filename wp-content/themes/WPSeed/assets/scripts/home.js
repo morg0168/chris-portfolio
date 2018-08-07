@@ -256,6 +256,11 @@ function initThree() {
           disableOrbitControls();
         }
       });
+      $bioDiv.on('touchend', function() {
+        if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
+          enableOrbitControls();
+        }
+      });
       //if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
         //disableOrbitControls();
       //}
