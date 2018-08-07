@@ -413,6 +413,12 @@ a {
   position: relative;
   margin: 0 auto;
   order:3;
+  text-align:right;
+  a {
+    width: 100%;
+    display: inline-block;
+    max-width: 50px;
+  }
   @include mobile {
     position:fixed;
     z-index:9999;

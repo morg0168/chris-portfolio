@@ -124,6 +124,8 @@ $(function() {
         $(this).after($(this).css({
           'background': 'black'
         }));
+        var $scrollBar = $('.project-desc');
+        $scrollBar.addClass('scrollbar');
       });
       $('.barba-container').animate({
         'opacity': 1
