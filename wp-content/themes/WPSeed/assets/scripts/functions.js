@@ -68,8 +68,7 @@ $(function() {
 
       //Fade out Bio information
        var $hamburger = $('#hamburger');
-      $hamburger.on('click', function() {
-         alert('clicked');
+       $hamburger.on('click', function() {
         if ($bio.hasClass('faded')) {
           $hamburger.closest('a').attr('href', window.globalObject.homeUrl + '/menu/');
         } else {

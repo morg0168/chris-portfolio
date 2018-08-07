@@ -241,12 +241,28 @@ function initThree() {
       function disableOrbitControls() {
         controls.enabled = false;
       }
+      function enableOrbitControls() {
+        controls.enabled = true;
+      }
 
       window.addEventListener('resize', onWindowResize, false);
       var $logoButton = $('.logoButton');
       $logoButton.on('click', function() {
         disableOrbitControls();
       });
-      disableOrbitControls();
+      if (isTouch || $(window).width() <= 767 || ($(window).width() == 812)) {
+        disableOrbitControls();
+      }
+      var $hamburger = $('#hamburger');
+      $hamburger.on('mouseup', function() {
+        enableOrbitControls();
+      });
+      var $canvas = $('canvas');
+      $canvas.on('touchstart', function() {
+        enableOrbitControls();
+      });
+      $canvas.on('touchend', function() {
+        disableOrbitControls();
+      });
     }
   }
