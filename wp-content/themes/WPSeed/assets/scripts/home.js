@@ -140,10 +140,13 @@ function initThree() {
           url: foobar2,
           texture: "wp-content/themes/WPSeed/dist/images/Asteroid_Texture2.jpg"
         }
-        // var random_boolean = Math.random() >= 0.5;
-        // random_boolean ? asteroidInstance = asteroid1 : asteroidInstance = asteroid2;
-
-        for (var i = 0; i < 75; i++) {
+        var max;
+        if (isTouch == true) {
+          max = 38;
+        } else {
+          max = 75;
+        }
+        for (var i = 0; i < max; i++) {
           //console.log(asteroidInstance);
           var loader = new THREE.JDLoader();
           loader.load(asteroid1.url, function(data) {
@@ -166,7 +169,7 @@ function initThree() {
             Asteroids.push(asteroid);
           });
         }
-        for (var i = 0; i < 75; i++) {
+        for (var i = 0; i < max; i++) {
           //console.log(asteroidInstance);
           var loader = new THREE.JDLoader(textureManager);
           loader.load(asteroid2.url, function(data) {
