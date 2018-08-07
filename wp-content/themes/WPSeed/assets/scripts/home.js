@@ -249,4 +249,14 @@ function initThree() {
       });
 
     }
+    var $hamburger = $('#hamburger');
+    var getUrl = window.location;
+    $hamburger.on('click', function() {
+      alert('clicked');
+      if ($bio.hasClass('faded')) {
+        $hamburger.closest('a').attr('href', window.globalObject.homeUrl + '/menu/');
+      } else {
+        $bio.fadeOut(2000).addClass('faded');
+      }
+    });
   }
