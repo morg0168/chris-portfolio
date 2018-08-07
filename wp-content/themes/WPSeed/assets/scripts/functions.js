@@ -65,17 +65,16 @@ $(function() {
     onEnterCompleted: function() {
       var $bio = $('.bio');
       initThree();
-      alert('working');
+
       //Fade out Bio information
        var $hamburger = $('#hamburger');
-      // var getUrl = window.location;
       $hamburger.on('click', function() {
          alert('clicked');
-      //   if ($bio.hasClass('faded')) {
-      //     $hamburger.closest('a').attr('href', window.globalObject.homeUrl + '/menu/');
-      //   } else {
-      //     $bio.fadeOut(2000).addClass('faded');
-      //   }
+        if ($bio.hasClass('faded')) {
+          $hamburger.closest('a').attr('href', window.globalObject.homeUrl + '/menu/');
+        } else {
+          $bio.fadeOut(2000).addClass('faded');
+        }
        });
     },
     onLeave: function() {
