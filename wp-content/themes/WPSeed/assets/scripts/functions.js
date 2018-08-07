@@ -117,6 +117,8 @@ $(function() {
       $slider.fadeIn(1000);
       if ($(window).width() > 767 && ($(window).width() != 812)) {
         initSlick();
+        var $scrollBar = $('.project-desc');
+        $scrollBar.addClass('scrollbar');
       }
       $('.top').animate({
         'opacity': 1
@@ -124,8 +126,6 @@ $(function() {
         $(this).after($(this).css({
           'background': 'black'
         }));
-        var $scrollBar = $('.project-desc');
-        $scrollBar.addClass('scrollbar');
       });
       $('.barba-container').animate({
         'opacity': 1
