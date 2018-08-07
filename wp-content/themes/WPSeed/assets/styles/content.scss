@@ -173,6 +173,9 @@ p {
     background-size: cover;
   }
   .project-desc {
+    @include mobile {
+      margin-top: 3rem;
+    }
     @include desktop {
       margin-left: calc(50px + 1rem);
       padding-left:0;
