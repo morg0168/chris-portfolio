@@ -33,7 +33,7 @@
       );
 
       $events = new WP_Query( $arg ); ?>
-        <p class="category-title">Projects</p>
+        <p class="category-title">Work</p>
         <? if ($events->have_posts() ) : while ($events->have_posts()) : $events->the_post(); ?>
           <article>
             <p><a href="<?php echo get_post_permalink(); ?>"><? the_title(); ?></a></p>
