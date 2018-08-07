@@ -155,7 +155,7 @@ gulp.task('javascript', ['clean:javascript'], function() {
       'assets/scripts/JDLoader.min.js',
       'assets/scripts/OrbitControls.js',
       "node_modules/barba.js/dist/barba.js",
-      //"node_modules/wowjs/dist/wow.min.js",
+      "node_modules/simplebar/dist/simplebar.min.js",
       // 'assets/scripts/home.js',
       // 'assets/scripts/functions.js',
       'assets/scripts/*.js'

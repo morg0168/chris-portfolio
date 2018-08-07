@@ -9,6 +9,7 @@
     "hamburgers": "^0.9.3",
     "normalize.css": "^7.0.0",
     "require": "^2.4.20",
+    "simplebar": "^3.0.0-beta.1",
     "slick-carousel": "^1.8.1",
     "three": "^0.93.0",
     "three-orbit-controls": "^82.1.0",
