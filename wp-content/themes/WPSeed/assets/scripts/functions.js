@@ -65,6 +65,7 @@ $(function() {
     onEnterCompleted: function() {
       var $bio = $('.bio');
       initThree();
+      alert('working');
       //Fade out Bio information
        var $hamburger = $('#hamburger');
       // var getUrl = window.location;
