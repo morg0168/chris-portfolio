@@ -54,7 +54,7 @@
           <? the_content(); ?>
         </article>
       </div>
-        <div class="col-xs-11 col-sm-5 project-desc">
+        <div class="col-xs-11 col-sm-5 project-desc"  data-simplebar>
           <? echo get_post_meta($postID,'description', true); ?>
         </div>
   </div>

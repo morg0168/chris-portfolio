@@ -118,7 +118,7 @@ $(function() {
       if ($(window).width() > 767 && ($(window).width() != 812)) {
         initSlick();
         var $scrollBar = $('.project-desc');
-        $scrollBar.addClass('scrollbar');
+      //  $scrollBar.addClass('scrollbar');
       }
       $('.top').animate({
         'opacity': 1
@@ -181,7 +181,6 @@ $(function() {
   }
   Barba.Pjax.start();
   initVideo();
-
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
     //history.scrollRestoration = 'manual';
   });

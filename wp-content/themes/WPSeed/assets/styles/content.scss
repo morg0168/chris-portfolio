@@ -7,8 +7,7 @@
  * @since       WPSeed 0.1
  *
  */
-
- /*=======================================================
+/*=======================================================
  Table of Contents:
  –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   1.0 General
@@ -17,30 +16,25 @@
   4.0 Pages
   5.0 Footer
   =======================================================*/
-
-
 @import 'vars';
-
-
-
 /*==================================================================================
   1.0 GENERAL
 ==================================================================================*/
-
 .content {
   position: relative;
   width: 100vw;
   padding: 0 2rem 2rem 50px;
-  order:1;
+  order: 1;
   @include desktop {
-    order:2;
+    order: 2;
   }
   @include mobile {
     width: 100%;
     padding: 1rem;
   }
-  section img,
-  article img {
+
+  article img,
+  section img {
     float: left;
     width: 50%;
     padding: 0 1rem 1rem 0;
@@ -51,23 +45,21 @@
     }
   }
 }
+
 .menu-list {
-  min-height:100vh;
+  min-height: 100vh;
+
   a:hover {
-    font-weight:800;
+    font-weight: 800;
   }
   @include mobile {
     width: 100%;
     padding: 1rem;
   }
 }
-
-
-
 /*==================================================================================
   2.0 TOP
 ==================================================================================*/
-
 .top {
   position: fixed;
   top: 0;
@@ -82,44 +74,38 @@
   padding: 1rem 0 1rem 50px;
   background-color: $color__black;
   // box-shadow: $shadow;
-  z-index:9999;
+  z-index: 9999;
   @include mobile {
-    padding: 1rem 1rem;
+    padding: 1rem;
   }
-  .logo {
+
+  .logo {
     width: auto;
     min-width: 100px;
     max-width: 100px;
     height: 100px;
-    background-image: url('images/logo_left.svg');
+    background-image: url("images/logo_left.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    display:inline-block;
+    display: inline-block;
   }
 }
-
-
-
 /*==================================================================================
   3.0 HEADINGS & PARAGRAPHS
 ==================================================================================*/
-
 h1 {
-  margin: 0 0 .25rem 0;
+  margin: 0 0 0.25rem;
   font-size: 2rem;
 }
 
 h2 {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
   font-size: 1.5rem;
 }
 
 p {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
 }
-
-
-
 /* TEMPLATE - HOME
 /------------------------*/
 .teaser {
@@ -127,12 +113,10 @@ p {
   height: 25rem;
   background-position: center;
   background-size: cover;
-/*==================================================================================
+  /*==================================================================================
   4.0 PAGES
 ==================================================================================*/
 }
-
-
 /* TEMPLATE - BLOG
 /––––––––––––––––––––––––*/
 .blog {
@@ -140,16 +124,19 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
   article {
     flex-basis: calc(90% / 2);
     margin-bottom: 1rem;
     @include mobile {
       flex-basis: 100%;
     }
+
     .readmore a {
       color: $default__color__link;
+
       &:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
@@ -161,82 +148,66 @@ p {
   @include tablet {
     font-size: $body__fontsizedesktop;
   }
+
   .postinfo {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     color: $color__grey;
   }
 
   .thumbnail {
     width: 100%;
     height: 15rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     background-size: cover;
   }
-  .project-desc {
-      @include mobile {
-        margin-top: 3rem;
-      }
-      @include desktop {
-        margin-left: calc(50px + 1rem);
-        padding-left:0;
-        max-height: 80px;
-        max-width: 550px;
-      }
-    }
-  .project-desc.scrollbar {
-    @include desktop {
-      overflow-y: scroll;
-      &::-webkit-scrollbar-track {
-      	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        background-color: #000;
-      }
-      &::-webkit-scrollbar {
-       	 width: 6px;
-          border-radius:10px;
-        	background-color: #000;
-      }
 
-      &::-webkit-scrollbar-thumb {
-      	background-color: #000;
-        border-radius:10px;
-        border: 1px solid #eee;
-      }
+  .project-desc {
+    @include mobile {
+      margin-top: 3rem;
+    }
+    @include desktop {
+      margin-left: calc(50px + 1rem);
+      padding-left: 0;
+      max-height: 80px;
+      max-width: 550px;
     }
   }
-
-
 }
-
 @include mobile {
   .slider {
-    display:block;
-    margin-top:0;
-    margin-bottom:0;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
   }
+
   .slide {
-    min-height:40vw;
+    min-height: 40vw;
+
     &.video-slide {
-      min-height:50vw;
-      border-top:1px solid red;
-      overflow:hidden;
+      min-height: 50vw;
+      border-top: 1px solid red;
+      overflow: hidden;
     }
+
     .slide-inner {
-      min-height:60vw;
+      min-height: 60vw;
     }
   }
+
   #video-controls #full-screen {
-    top:-46.5vw;
+    top: -46.5vw;
   }
+
   .content.post-item {
-    order:1;
-    margin-top:150px;
+    order: 1;
+    margin-top: 150px;
   }
+
   .top+div {
-    order:2;
-  //  margin-top:150px;
+    order: 2;
+    //  margin-top:150px;
   }
 }
-
 // @include iphoneXLandscape {
 //   .slider {
 //     display:block;
@@ -266,14 +237,11 @@ p {
 //   //  margin-top:150px;
 //   }
 // }
-
 @include mobile {
-    .menu-container {
-      padding: 0 1rem;
-    }
+  .menu-container {
+    padding: 0 1rem;
+  }
 }
-
-
 /* TEMPLATE - SUBSITES
 /––––––––––––––––––––––––*/
 .subsites {
@@ -281,6 +249,7 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
   section {
     flex-basis: calc(90% / 3);
     margin-bottom: 1rem;
@@ -293,6 +262,7 @@ p {
     @include mobile {
       flex-basis: 100%;
     }
+
     .thumbnail {
       width: 100%;
       height: 15rem;
@@ -300,15 +270,15 @@ p {
     }
   }
 }
-
 //LOCK IPAD TO LANDSCAPE
 @include tabletPortrait {
   body {
     &.post {
       .turn-ipad {
         display: block;
-        color:white;
-        font-size:2rem;
+        color: white;
+        font-size: 2rem;
+
         p {
           position: absolute;
           width: 280px;
@@ -317,16 +287,13 @@ p {
           top: calc(50vh - 100px + 4rem);
         }
       }
+
       #barba-wrapper {
-        opacity:0;
+        opacity: 0;
       }
     }
   }
 }
-
-
-
-
 /*==================================================================================
   5.0 FOOTER
 ==================================================================================*/
@@ -336,7 +303,7 @@ p {
   width: 100vw;
   margin-top: auto;
   padding: 1.5rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: $color__grey;
   background: $color__bright;
   box-shadow: $shadow;
